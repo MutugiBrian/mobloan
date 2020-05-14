@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{{config('app.name')}} - Register</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="../img/mdb-favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="../css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<style>
+  html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 1000px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 650px;
+  }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  .navbar:not(.top-nav-collapse) {
+     background: #3f51b5!important;
+  }
+}
+
+/* #3FD2C7#99DDFF#3f51b5*/
+/* Navbar animation */
+.navbar {
+  background-color: rgba(0, 0, 0, 0); }
+
+.top-nav-collapse {
+  background-color: #3f51b5; }
+
+/* Adding color to the Navbar on mobile */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #3f51b5; } }
+
+/* Footer color for sake of consistency with Navbar */
+.page-footer {
+  background-color: #3f51b5; 
+  }
+
+.colora{
+  color: #3f51b5; 
+}
+.bga{
+  background-color: #3f51b5; 
+}
+.colorb{
+  color: #99DDFF; 
+}
+.bgl{
+  background-color: #99DDFF; 
+}
+.bgi{
+  background-color:#f4f4f7;
+}
+.colorc{
+  color: #3FD2C7; 
+}
+.bgc{
+  background-color: #3FD2C7; 
+}
+.sizea{
+  font-size: x-large;
+}
+.sizeb{
+  font-size: large;
+}
+.coimage{
+  height: 165px;
+  width: 250px;
+}
+
+.vc {
+  /* margin: 0;
+  position: absolute;
+  top: 70%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); */
+  width: 100% !important;
+
+}
+.obuttona{
+  color: #3f51b5 !important;
+  border:2px solid #3f51b5 !important;
+}
+.obuttonb{
+  color: #99DDFF !important;
+  border:2px solid #99DDFF !important;
+}
+.obuttonc{
+  color: #3FD2C7 !important;
+  border:2px solid #3FD2C7 !important;
+}
+.nb{
+    border:none !important;
+}
+.cbuttonw{
+ background-color: white;
+ color: black !important;
+}
+
+.cbuttonw:hover{
+ background-color: #3f51b5;
+ color: white !important;
+}
+.mts{
+    margin-top: 13%;
+    width: 30px !important;
+}
+
+
+
+
+</style>
+<body class="bgi">
+
+<!--Main layout-->
+<div class="my-0 mx-0 px-0 z-depth-0 d-none d-md-block d-lg-block d-xl-block" >
+    <div class="row my-0 mx-0">
+        
+        <div class="col-6 text-left align-left">
+            <a href="../index.html">
+            <div class="mx-4 my-2">
+                <h3 class="font-weight-bold my-4 pb-2 text-left colora">{{config('app.name')}}</h3>
+            </div>
+            </a>
+        </div>
+        <div class="col-6 text-right align-left">
+            <div class="mx-4 my-2">
+                <a href="register.html" type="button" class="btn btn-link cbuttonw z-depth-0 rounded mb-0">No account ?</a>
+            </div>
+        </div>
+
+     </div>
+</div>
+<!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar z-depth-0 d-block d-md-none d-lg-none d-xl-none">
+    <div class="container">
+  
+      <!-- Brand -->
+      <a class="navbar-brand" href="../index.html" >
+        <strong>{{config('app.name')}}</strong>
+      </a>
+  
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+  
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <!-- <li class="nav-item">
+            <a href="https://www.facebook.com" class="nav-link" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://instagram.com" class="nav-link" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li> -->
+          <li class="nav-item">
+            <a href="login.html" class="nav-link border border-light rounded">
+              <i class="fas fa-lock mr-2"></i>Login
+            </a>
+          </li>
+        </ul>
+  
+      </div>
+  
+    </div>
+  </nav>
+  <!-- Navbar -->
+<main>
+  <center>
+
+</div>
+ <div class="vc">
+    
+  <div class="container mt-0 px-0 z-depth-0">
+           <div class="d-block d-md-none d-lg-none d-xl-none mts">
+
+           </div>
+
+            <div class="row d-flex justify-content-center mx-3 px-3">
+                <div class="col-md-6 text-center colorc">
+                <h2 class="pb-2 colora">Activate Account</h2>
+                <p class="grey-text pt-1 sizec">
+                   Your account has been approved.<br />
+                   Fill this form to finish.
+                </p>
+                </div>
+            </div>
+
+            
+
+            
+
+          <div class="col-md-6 mx-auto mt-0">
+            <!-- Material form login -->
+            <div class="card z-depth-0 bgi mt-0">
+  
+              <!--Card content-->
+              <div class="card-body mt-0">
+                <!-- Form -->
+                <form class="text-center mx-3 px-3 needs-validation" style="color: #757575;" action="#!" novalidate>
+                  <div class="my-2">
+                    <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+                    <label for="validationCustom04">Display Picture</label>
+                    </small>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                      </div>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                          aria-describedby="inputGroupFileAddon01" accept="image/x-png,image/jpeg" >
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                      </div>
+                    </div>
+                    <div class="invalid-feedback">
+                      Please upload a valid picture.
+                    </div>
+                  </div>
+                  <div class="my-2">
+                    <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+                    <label for="validationCustom04">Company Name</label>
+                    </small>
+                    <input type="text" class="form-control nb" id="validationCustom04" placeholder="" required>
+                    <div class="invalid-feedback">
+                      Please provide a valid name.
+                    </div>
+                  </div>
+                  <div class="my-2">
+                    <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+                    <label for="validationCustom04">Phone Number</label>
+                    </small>
+                    <input type="number" class="form-control nb" id="validationCustom04" placeholder="" required>
+                    <div class="invalid-feedback">
+                      Please provide a valid number.
+                    </div>
+                  </div>
+
+
+                  <div class="text-center mt-3">
+                    <button class="btn btn-outline-primary waves-effect obuttona z-depth-0 rounded mb-0" type="submit">ACTIVATE ACCOUNT</button>
+                  </div>
+                  <div class="row mt-2 colora">
+                    <small id="passwordHelpBlock" class="form-text text-right col colorb">
+                       <a class="colorb" href="login.html">Already Activated?&nbsp;Login</a>
+                     </small>
+                  </div>
+
+                </form>
+                <!-- Form -->
+              </div>
+
+  
+            </div>
+            <!-- Material form login -->
+          </div>
+        </div>
+  
+      </div>
+  
+  
+  </div>
+  
+ </div>
+   
+</center>
+
+</main>
+
+<!--Main layout-->
+  <!-- End your project here-->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="../js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="../js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript">
+
+
+(function() {
+'use strict';
+window.addEventListener('load', function() {
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.getElementsByClassName('needs-validation');
+// Loop over them and prevent submission
+var validation = Array.prototype.filter.call(forms, function(form) {
+form.addEventListener('submit', function(event) {
+if (form.checkValidity() === false) {
+event.preventDefault();
+event.stopPropagation();
+}
+form.classList.add('was-validated');
+}, false);
+});
+}, false);
+})();
+
+  $(document).ready(function() {
+
+  new WOW().init();
+  
+ });
+  </script>
+
+</body>
+</html>

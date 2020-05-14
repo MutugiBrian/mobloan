@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{{config('app.name')}} - Users</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="../img/mdb-favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="../css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- MDBootstrap Datatables  -->
+  <link href="../css/addons/datatables.min.css" rel="stylesheet">
+
+
+</head>
+<style>
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 1000px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 650px;
+  }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  .navbar:not(.top-nav-collapse) {
+     background: #3f51b5!important;
+  }
+}
+
+/* #3FD2C7#99DDFF#3f51b5*/
+/* Navbar animation */
+.navbar {
+  background-color: rgba(63, 81, 181, 1); }
+
+.top-nav-collapse {
+  background-color: #3f51b5; }
+
+/* Adding color to the Navbar on mobile */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #3f51b5; } }
+
+/* Footer color for sake of consistency with Navbar */
+.page-footer {
+  background-color: #3f51b5; 
+  }
+
+.colora{
+  color: #3f51b5; 
+}
+.bga{
+  background-color: #3f51b5; 
+}
+.colorb{
+  color: #99DDFF; 
+}
+.bgb{
+  background-color: #99DDFF; 
+}
+.bgl{
+  background-color: #99DDFF; 
+}
+.bgi{
+  background-color:#f4f4f7;
+}
+.colorc{
+  color: #3FD2C7; 
+}
+.bgc{
+  background-color: #3FD2C7; 
+}
+.sizea{
+  font-size: x-large;
+}
+.sizeb{
+  font-size: large;
+}
+.coimage{
+  height: 165px;
+  width: 250px;
+}
+
+.vc {
+  /* margin: 0;
+  position: absolute;
+  top: 70%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); */
+  width: 100% !important;
+
+}
+.obuttona{
+  color: #3f51b5 !important;
+  border:2px solid #3f51b5 !important;
+}
+.obuttonb{
+  color: #99DDFF !important;
+  border:2px solid #99DDFF !important;
+}
+.obuttonc{
+  color: #3FD2C7 !important;
+  border:2px solid #3FD2C7 !important;
+}
+.nb{
+    border:none !important;
+}
+.cbuttonw{
+ background-color: white;
+ color: black !important;
+}
+
+.cbuttonw:hover{
+ background-color: #3f51b5;
+ color: white !important;
+}
+
+.cbuttonc{
+ background-color: #3FD2C7 !important;
+ color: white !important;
+}
+
+.cbuttonc:hover{
+ background-color: #3f51b5 !important;
+ color: white !important;
+}
+
+.cbuttone{
+ background-color: #ff4444 !important;
+ color: white !important;
+}
+
+.cbuttone:hover{
+ background-color: #3f51b5 !important;
+ color: white !important;
+}
+
+
+.cbuttond{
+ background-color: #33b5e5 !important;
+ color: white !important;
+}
+
+.cbuttond:hover{
+ background-color: #3f51b5 !important;
+ color: white !important;
+}
+
+
+.mts{
+    margin-top: 13%;
+}
+.collapse.show{
+    background-color:#f4f4f7;
+}
+.page-item.active > .page-link{
+  background-color: #3f51b5 !important;
+}
+.sorting_disabled input {
+  height: 15px;
+  width: 15px;
+  opacity: 1 !important;
+  position: relative !important;
+}
+.dt-checkboxes{
+  height: 15px;
+  width: 15px;
+  opacity: 1 !important;
+  position: relative !important;
+}
+.obuttonah{
+  color: #3f51b5 !important;
+  border:2px solid #3f51b5 !important;
+}
+.obuttonah:hover{
+ background-color: #3f51b5;
+ color: white !important;
+}
+</style>
+<body class="bgi">
+
+<!--Main layout-->
+<nav class="navbar navbar-expand-lg navbar-dark  z-depth-0">
+    <div class="container">
+  
+      <!-- Brand -->
+      <a class="navbar-brand" href="clerkhome.html" >
+        <strong>{{config('app.name')}}</strong>
+      </a>
+  
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="clerkhome.html">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-light">1
+              <i class="fas fa-bell"></i>
+            </a>
+          </li>
+        </ul>
+  
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <!-- <li class="nav-item">
+            <a href="https://www.facebook.com" class="nav-link" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li> -->
+          
+          
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"> Clerk</a>
+            <div class="dropdown-menu dropdown-menu-left dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+              <a class="dropdown-item" href="clerkprofile.html">My account</a>
+              <a class="dropdown-item" href="#" data-toggle="modal" data-parent="#accordionEx" data-target="#modalConfirmLogOut">Log out</a>
+            </div>
+          </li>
+          <li class="nav-item avatar">
+            <a class="nav-link p-0" href="#">
+              <img src="../img/placeholders/usermale.jpg" class="rounded-circle z-depth-0"
+                alt="user image" height="35">
+            </a>
+          </li>
+        </ul>
+  
+      </div>
+  
+    </div>
+  </nav>
+  <!-- Navbar -->
+<main style="min-height: 86.4%;">
+  <center>
+
+</div>
+ <div class="vc">
+
+    <div class="row text-center d-flex justify-content-center mt-2 mx-2 p-2">
+        <div class="col-6 col-md-4 col-lg-4 col-xl-3 mb-2  py-0 px-2 px-md-3 px-lg-5 px-xl-5">
+            <!-- Admin card -->
+         <div class="card mt-3 z-depth-0">
+
+            <div class="py-0 text-left">
+              <i class="fas fa-database fa-lg bga z-depth-0 p-4 ml-3 mt-n3 rounded text-white" ></i>
+              <div class="float-right text-right p-3">
+                <p class="text-uppercase text-muted mb-1"><small>Submissions</small></p>
+                <h4 class="font-weight-bold mb-0">674</h4>
+              </div>
+            </div>
+  
+            <div class="card-body pt-0">
+              <div class="progress md-progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+              <p class="card-text">More than last week (20%)</p>
+            </div>
+  
+          </div>
+          <!-- Admin card -->
+        </div>
+        <div class="col-6 col-md-4 col-lg-4 col-xl-3 mb-2  py-0 px-2 px-md-3 px-lg-5 px-xl-5">
+            <!-- Admin card -->
+         <div class="card mt-3 z-depth-0">
+
+            <div class="py-0 text-left">
+              <i class="fas fa-check-double fa-lg bga z-depth-0 p-4 ml-3 mt-n3 rounded text-white" ></i>
+              <div class="float-right text-right p-3">
+                <p class="text-uppercase text-muted mb-1"><small>Approved</small></p>
+                <h4 class="font-weight-bold mb-0">634</h4>
+              </div>
+            </div>
+  
+            <div class="card-body pt-0">
+              <div class="progress md-progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 53%" aria-valuenow="53" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+              <p class="card-text">More than last week (53%)</p>
+            </div>
+  
+          </div>
+          <!-- Admin card -->
+        </div>
+        <div class="col-6 col-md-4 col-lg-4 col-xl-3 mb-2  py-0 px-2 px-md-3 px-lg-5 px-xl-5">
+            <!-- Admin card -->
+         <div class="card mt-3 z-depth-0">
+
+            <div class="py-0 text-left">
+              <i class="fas fa-times fa-lg bga z-depth-0 p-4 ml-3 mt-n3 rounded text-white" ></i>
+              <div class="float-right text-right p-3">
+                <p class="text-uppercase text-muted mb-1"><small>Declined</small></p>
+                <h4 class="font-weight-bold mb-0">6</h4>
+              </div>
+            </div>
+  
+            <div class="card-body pt-0">
+              <div class="progress md-progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 86%" aria-valuenow="86" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+              <p class="card-text">More than last week (86%)</p>
+            </div>
+  
+          </div>
+          <!-- Admin card -->
+        </div>
+        <div class="col-6 col-md-4 col-lg-4 col-xl-3 mb-2  py-0 px-2 px-md-3 px-lg-5 px-xl-5">
+            <!-- Admin card -->
+         <div class="card mt-3 z-depth-0">
+
+            <div class="py-0 text-left">
+              <i class="fas fa-hourglass-half fa-lg bga z-depth-0 p-4 ml-3 mt-n3 rounded text-white" ></i>
+              <div class="float-right text-right p-3">
+                <p class="text-uppercase text-muted mb-1"><small>Pending</small></p>
+                <h4 class="font-weight-bold mb-0">34</h4>
+              </div>
+            </div>
+  
+            <div class="card-body pt-0">
+              <div class="progress md-progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 69%" aria-valuenow="69" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+              <p class="card-text">More than last week (69%)</p>
+            </div>
+  
+          </div>
+          <!-- Admin card -->
+        </div>
+      </div>
+
+
+
+      <div class="text-center justify-content-center mt-2 mx-4 px-2">
+
+
+
+        <div class="row my-0 mx-0 justify-content-center">
+        
+              <div class="mx-4 my-2">
+                  <a href="" type="button" class="btn btn-link cbuttonc z-depth-0 rounded mb-0 bga" data-toggle="modal" data-target="#modalAddUserForm"> <i class="fas fa-plus"></i>&nbsp; Add Record</a>
+              </div>
+            <div class="mx-4 my-2">
+                <a href="" type="button" class="btn btn-link cbuttond z-depth-0 rounded mb-0 disabled" id="viewclerk" data-toggle="modal" data-target="#modalEditUserForm"><i class="fas fa-edit"></i>&nbsp;Edit Record</a>
+            </div>
+          <div class="mx-4 my-2">
+              <a href="" type="button" class="btn btn-link cbuttone z-depth-0 rounded mb-0 disabled" id="removeclerk" type="button" data-toggle="modal" data-target="#modalConfirmRemove"><i class="fas fa-trash"></i>&nbsp; Discard Record</a>
+          </div>
+  
+       </div>
+
+
+       <!-- Clerk table starts here -->
+
+       <table id="dtMaterialDesignExample" class="table table table-striped">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Extn.</th>
+            <th>Start date</th>
+            <th>Salary</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Extn.</th>
+            <th>Start date</th>
+            <th>Salary</th>
+        </tr>
+        </tfoot>
+    </table>
+
+       <!-- <table id="dtMaterialDesignExample" class="table table-striped" cellspacing="0" width="100%">
+       
+      </table> -->
+
+       <!-- Clerks table ends here -->
+      </div>
+  
+      </div>
+  </div>
+ </div>
+
+
+
+
+
+   
+</center>
+
+
+<div class="modal fade" id="modalAddUserForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content bgi">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Add new record</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+
+  <!-- Form -->
+  <form class="text-center mx-3 px-3 needs-validation detailsform" style="color: #757575;" action="#!" novalidate>
+    <div class="my-2">
+        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+        <label for="validationCustom04">Property Type</label>
+        </small>
+        <select class="form-control nb browser-default custom-select custom-select-lg mb-3" required>
+          <option value="" selected>Select Type</option>
+          <option value="1">House For Rent</option>
+          <option value="2">House For Sale</option>
+          <option value="3">Land For Lease</option>
+          <option value="4">Land For Sale</option>
+      </select>
+        <div class="invalid-feedback">
+        Select a valid type.
+        </div>
+    </div>
+    <div class="my-2">
+      <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+      <label for="validationCustom04">Property Custodian</label>
+      </small>
+      <select class="form-control nb browser-default custom-select custom-select-lg mb-3" required>
+        <option value="" selected>Select Type</option>
+        <option value="1">Owner</option>
+        <option value="2">Agent</option>
+        <option value="3">Other</option>
+    </select>
+      <div class="invalid-feedback">
+      Select a valid type.
+      </div>
+  </div>
+    <div class="my-2">
+        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+        <label for="validationCustom04">Property Address</label>
+        </small>
+        <input type="text" class="form-control nb" id="validationCustom04" placeholder="" required>
+        <div class="invalid-feedback">
+        Please provide a valid address.
+        </div>
+    </div>
+    <div class="my-2">
+        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+        <label for="validationCustom04">Contact Number</label>
+        </small>
+        <input type="number" class="form-control nb" id="validationCustom04" placeholder="" required>
+        <div class="invalid-feedback">
+        Please provide a valid number.
+        </div>
+    </div>
+    <div class="my-2">
+      <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+      <label for="validationCustom04">Size (in Meters Squared)</label>
+      </small>
+      <input type="number" class="form-control nb" id="validationCustom04" placeholder="" required>
+      <div class="invalid-feedback">
+      Please provide a valid size.
+      </div>
+    </div>
+    <div class="my-2">
+        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+        <label for="validationCustom04">BedRooms </label>
+        </small>
+
+        <select class="form-control nb browser-default custom-select custom-select-lg mb-3" required>
+            <option value="" selected>Select Bedrooms</option>
+            <option value="1" >1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">4+</option>
+            <option value="3">N/A</option>
+        </select>
+
+        <div class="invalid-feedback">
+        Please select a valid industry.
+        </div>
+    </div>
+
+    <div class="row m-0 p-0">
+
+      <div class="col-12 my-2">
+        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+        <label for="validationCustom04">Amount</label>
+        </small>
+        <input type="number" class="form-control nb" id="validationCustom04" placeholder="" value="" required>
+        <div class="invalid-feedback">
+        Please provide a valid amount.
+        </div>
+     </div>
+
+     <div class="col-6 my-2">
+        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+        <label for="validationCustom04">Currency </label>
+        </small>
+
+        <select class="form-control nb browser-default custom-select custom-select-lg mb-3" required>
+            <option value="" selected>Select Currency</option>
+            <option value="KSHS" >KSHS</option>
+            <option value="USD">USD</option>
+        </select>
+
+        <div class="invalid-feedback">
+        Please select a valid currency.
+        </div>
+     </div>
+
+      <div class="col-6 my-2">
+        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+        <label for="validationCustom04">Per </label>
+        </small>
+
+        <select class="form-control nb browser-default custom-select custom-select-lg mb-3" required>
+            <option value="" selected>Select Event/Duration</option>
+            <option value="1" >Purchase</option>
+            <option value="2">Month</option>
+            <option value="3">Half Year</option>
+            <option value="3">Year</option>
+            <option value="4">2 Years</option>
+        </select>
+
+        <div class="invalid-feedback">
+        Please select a valid industry.
+        </div>
+    </div>
+
+    </div>
+
+
+
+    <div class="text-center mt-3">
+        <div class="mx-4 my-2">
+            <button type="submit" class="btn btn-link obuttonah z-depth-0 rounded mb-0">Submit Record</button>
+        </div>
+    </div>
+    </form>
+    <!-- Form -->
+    
+  </div>
+</div>
+</div>
+
+
+
+<!-- Edit Clerk Modal starts  -->
+
+<div class="modal fade" id="modalEditUserForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content bgi">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Edit record</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+
+ <!-- Form -->
+ <form class="text-center mx-3 px-3 needs-validation detailsform" style="color: #757575;" action="#!" novalidate>
+    <div class="my-2">
+        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+        <label for="validationCustom04">Property Type</label>
+        </small>
+        <select class="form-control nb browser-default custom-select custom-select-lg mb-3" required>
+          <option value="" selected>Select Type</option>
+          <option value="1">House For Rent</option>
+          <option value="2">House For Sale</option>
+          <option value="3">Land For Lease</option>
+          <option value="4">Land For Sale</option>
+      </select>
+        <div class="invalid-feedback">
+        Select a valid type.
+        </div>
+    </div>
+    <div class="my-2">
+      <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+      <label for="validationCustom04">Property Custodian</label>
+      </small>
+      <select class="form-control nb browser-default custom-select custom-select-lg mb-3" required>
+        <option value="" selected>Select Type</option>
+        <option value="1">Owner</option>
+        <option value="2">Agent</option>
+        <option value="3">Other</option>
+    </select>
+      <div class="invalid-feedback">
+      Select a valid type.
+      </div>
+  </div>
+    <div class="my-2">
+        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+        <label for="validationCustom04">Property Address</label>
+        </small>
+        <input type="text" class="form-control nb" id="validationCustom04" placeholder="" required>
+        <div class="invalid-feedback">
+        Please provide a valid address.
+        </div>
+    </div>
+    <div class="my-2">
+        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+        <label for="validationCustom04">Contact Number</label>
+        </small>
+        <input type="number" class="form-control nb" id="validationCustom04" placeholder="" required>
+        <div class="invalid-feedback">
+        Please provide a valid number.
+        </div>
+    </div>
+    <div class="my-2">
+      <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+      <label for="validationCustom04">Size (in Meters Squared)</label>
+      </small>
+      <input type="number" class="form-control nb" id="validationCustom04" placeholder="" required>
+      <div class="invalid-feedback">
+      Please provide a valid size.
+      </div>
+    </div>
+    <div class="my-2">
+        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+        <label for="validationCustom04">BedRooms </label>
+        </small>
+
+        <select class="form-control nb browser-default custom-select custom-select-lg mb-3" required>
+            <option value="" selected>Select Bedrooms</option>
+            <option value="1" >1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">4+</option>
+            <option value="3">N/A</option>
+        </select>
+
+        <div class="invalid-feedback">
+        Please select a valid industry.
+        </div>
+    </div>
+
+    <div class="row m-0 p-0">
+
+      <div class="col-12 my-2">
+        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+        <label for="validationCustom04">Amount</label>
+        </small>
+        <input type="number" class="form-control nb" id="validationCustom04" placeholder="" value="" required>
+        <div class="invalid-feedback">
+        Please provide a valid amount.
+        </div>
+     </div>
+
+     <div class="col-6 my-2">
+        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+        <label for="validationCustom04">Currency </label>
+        </small>
+
+        <select class="form-control nb browser-default custom-select custom-select-lg mb-3" required>
+            <option value="" selected>Select Currency</option>
+            <option value="KSHS" >KSHS</option>
+            <option value="USD">USD</option>
+        </select>
+
+        <div class="invalid-feedback">
+        Please select a valid currency.
+        </div>
+     </div>
+
+      <div class="col-6 my-2">
+        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+        <label for="validationCustom04">Per </label>
+        </small>
+
+        <select class="form-control nb browser-default custom-select custom-select-lg mb-3" required>
+            <option value="" selected>Select Event/Duration</option>
+            <option value="1" >Purchase</option>
+            <option value="2">Month</option>
+            <option value="3">Half Year</option>
+            <option value="3">Year</option>
+            <option value="4">2 Years</option>
+        </select>
+
+        <div class="invalid-feedback">
+        Please select a valid industry.
+        </div>
+    </div>
+
+    </div>
+
+
+
+    <div class="text-center mt-3">
+        <div class="mx-4 my-2">
+            <button type="submit" class="btn btn-link obuttonah z-depth-0 rounded mb-0">Update Record</button>
+        </div>
+    </div>
+    </form>
+    <!-- Form -->
+
+    
+  </div>
+</div>
+</div>
+
+<!-- Edit clerk modal end here -->
+
+
+
+<!--Modal: modalConfirmDelete-->
+<div class="modal fade" id="modalConfirmRemove" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">Are you sure you want to discard the selected record(s)?</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+
+        <i class="fas fa-trash fa-4x animated fadeInDown"></i>
+
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer flex-center">
+        <a href="" class="btn  btn-outline-danger">Yes</a>
+        <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">No</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!--Modal: modalConfirmDelete-->
+
+
+
+<!--Modal: modalConfirmLogOut-->
+<div class="modal fade" id="modalConfirmLogOut" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">Are you sure you want to logout?</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+
+        <i class="fas fa-power-off fa-4x animated rotateIn"></i>
+
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer flex-center">
+        <a href="../index.html" class="btn  btn-outline-danger">Yes</a>
+        <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">No</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!--Modal: modalConfirmLogOut-->
+
+
+</main>
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+    <div class="footer-copyright py-3">
+      © 2020 Copyright:
+      <a href="#"> {{config('app.name')}} </a>
+    </div>
+</footer>
+
+<!--Main layout-->
+  <!-- End your project here-->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="../js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="../js/mdb.min.js"></script>
+  <!-- MDBootstrap Datatables  -->
+  <script type="text/javascript" src="../js/addons/datatables.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+<script src='https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.11/js/dataTables.checkboxes.min.js'></script>
+  <script type="text/javascript">
+
+(function() {
+'use strict';
+window.addEventListener('load', function() {
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.getElementsByClassName('needs-validation');
+// Loop over them and prevent submission
+var validation = Array.prototype.filter.call(forms, function(form) {
+form.addEventListener('submit', function(event) {
+if (form.checkValidity() === false) {
+event.preventDefault();
+event.stopPropagation();
+}
+form.classList.add('was-validated');
+}, false);
+});
+}, false);
+})();
+
+
+  $(document).ready(function() {
+
+  new WOW().init();
+
+
+  var table = $('#dtMaterialDesignExample').DataTable({
+    'ajax': 'https://api.myjson.com/bins/1us28',
+    'columnDefs': [
+    {
+      'targets': 0,
+      'checkboxes': {
+        'selectRow': true } 
+    },
+
+
+    // {
+    //   "targets": -1,
+    //   "data": null,
+    //   "defaultContent": "<div class='row px-0 pl-2' ><button type='button' class='btn btn-sm btn-outline-success waves-effect z-depth-0 px-1 col'>View</button><button type='button' class='col btn btn-sm btn-outline-danger waves-effect z-depth-0 px-1 mx-1'>Deactivate</button></div>" 
+    // }
+    ],
+
+
+    'select': {
+      'style': 'multi',
+      selector: ':not(:last-child)' },
+
+    'order': [[1, 'asc']] });
+
+
+
+    // $('.dt-checkboxes').on('change', function(e){
+
+    //        // var rows_selected = table.column(0).checkboxes.selected();
+    //         alert("hw");
+
+
+    // });
+
+    $(document).on('change', 'tbody', function () {
+    var rows_selected = table.column(0).checkboxes.selected();
+    var row_count = rows_selected.length;
+
+    if(row_count == 1){
+    $('#viewclerk').removeClass('disabled');
+    $('#viewclerk').addClass('bgb');
+
+    $('#removeclerk').removeClass('disabled');
+    $('#removeclerk').addClass('bgb');
+
+    }else{
+    $('#viewclerk').removeClass('bgb');
+    $('#viewclerk').addClass('disabled');
+
+    $('#removeclerk').removeClass('bgb');
+    $('#removeclerk').addClass('disabled');
+
+    }
+
+
+    });
+
+   
+
+  
+
+
+
+ 
+
+
+  $('#dtMaterialDesignExample_wrapper').find('label').each(function () {
+    $(this).parent().append($(this).children());
+  });
+  $('#dtMaterialDesignExample_wrapper .dataTables_filter').find('input').each(function () {
+    const $this = $(this);
+    $this.attr("placeholder", "Search");
+    $this.removeClass('form-control-sm');
+  });
+  $('#dtMaterialDesignExample_wrapper .dataTables_length').addClass('d-flex flex-row');
+  $('#dtMaterialDesignExample_wrapper .dataTables_filter').addClass('md-form');
+  $('#dtMaterialDesignExample_wrapper select').removeClass(
+  'custom-select custom-select-sm form-control form-control-sm');
+  $('#dtMaterialDesignExample_wrapper select').addClass('mdb-select');
+  $('#dtMaterialDesignExample_wrapper .mdb-select').materialSelect();
+  $('#dtMaterialDesignExample_wrapper .dataTables_filter').find('label').remove();
+  
+ });
+
+
+ 
+
+  </script>
+
+</body>
+</html>
