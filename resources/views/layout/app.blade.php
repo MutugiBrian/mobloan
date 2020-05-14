@@ -27,20 +27,62 @@
     html,
     body,
     header,
-    .view {
+    /* .view {
         height: 100%;
+    } */
+
+    .colora {
+        color: #74d5de !important;
+    }
+
+    .bga {
+        background-color: #74d5de !important;
+    }
+
+
+    .colorb {
+        color: #D4AF37 !important;
+    }
+
+    .bgb {
+        background-color: #D4AF37 !important;
+    }
+
+    .colorc {
+        color: #fed385 !important;
+    }
+
+    .bgc {
+        background-color: #fed385 !important;
+    }
+
+    .vc {
+        min-height: 70vh !important;
     }
 
     </style>
+    <!-- Main navigation -->
+    <!--Main Navigation-->
+    <header>
 
+        <nav class="navbar navbar-expand-lg navbar-dark bga z-depth-0">
+            <div class="container">
+                <a class="navbar-brand" href="/"><strong>{{config('app.name')}}</strong></a>
+                <div class="mr-1 text-white">
+                    Loan comparator
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--Main Navigation-->
     @yield('pagestyle')
 
     <body>
 
-        <main>
+        <main class="my-5 vc">
             @yield('body')
         </main>
-        <footer class="page-footer text-center font-small mt-0">
+        <footer class="page-footer text-center font-small mt-0 bga">
             <div class="footer-copyright py-3">
                 © 2020 Copyright:
                 <a href="#"> {{config('app.name')}} </a>
@@ -49,8 +91,6 @@
 
         <!--Main layout-->
         <!-- End your project here-->
-
-        <!-- jQuery -->
         <script type="text/javascript" src="{{ asset('mdb/js/jquery.min.js') }}"></script>
         <!-- Bootstrap tooltips -->
         <script type="text/javascript" src="{{ asset('mdb/js/popper.min.js') }}"></script>
@@ -61,6 +101,10 @@
         <!-- Your custom scripts (optional) -->
         <!-- MDBootstrap Datatables  -->
         <script type="text/javascript" src="{{asset('mdb/js/addons/datatables.min.js')}}"></script>
+        <!-- MDBootstrap Masonry  -->
+        <script type="text/javascript" src="{{asset('mdb/js/addons/masonry.pkgd.min.js')}}"></script>
+
+        <script type="text/javascript" src="{{asset('mdb/js/addons/imagesloaded.pkgd.min.js')}}"></script>
         <!-- Your custom scripts (optional) -->
         <script src="{{ asset('others/dataTables.checkboxes.min.js') }}"></script>
         <script src="{{ asset('highcharts/highcharts.js') }}"></script>
@@ -77,69 +121,6 @@
         <script src="{{ asset('others/sylvester.min.js') }}"></script>
         </script>
         <script src="{{ asset('others/1.0.0.js') }}"></script>
-        <script type="text/javascript">
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('detailsform');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-
-
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-
-        $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
-                }
-            });
-
-            new WOW().init();
-            // Material Select Initialization
-            $(document).ready(function() {
-                // $('.mdb-select').materialSelect();
-            });
-
-
-        });
-
-        function addCommas(x) {
-            //remove commas
-            retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
-
-            //apply formatting
-            return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-        </script>
-
         @yield('pagescripts')
     </body>
 
