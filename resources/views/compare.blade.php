@@ -3,50 +3,8 @@
 
 @section('pagestyle')
 <style>
-.gallery {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    -webkit-column-width: 33%;
-    -moz-column-width: 33%;
-    column-width: 33%;
-}
-
-.gallery .pics {
-    -webkit-transition: all 350ms ease;
-    transition: all 350ms ease;
-}
-
-.gallery .animation {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-}
-
-@media (max-width: 450px) {
-    .gallery {
-        -webkit-column-count: 1;
-        -moz-column-count: 1;
-        column-count: 1;
-        -webkit-column-width: 100%;
-        -moz-column-width: 100%;
-        column-width: 100%;
-    }
-}
-
-@media (max-width: 400px) {
-    .btn.filter {
-        padding-left: 1.1rem;
-        padding-right: 1.1rem;
-    }
-}
-
-button.close {
-    position: absolute;
-    right: 0;
-    z-index: 2;
-    padding-right: 1rem;
-    padding-top: .6rem;
+.amountinput {
+    width: 200px !important;
 }
 
 </style>
@@ -54,183 +12,408 @@ button.close {
 
 
 @section('body')
-<div class="container my-5">
+<!-- <div class="container">
+    <!-- Material input -->
+<!-- <div class="md-form">
+    <i class="fas fa-hand-holding-usd prefix"></i>
+    <input type="number" id="inputValidationEx2" class="form-control validate amountinput">
+    <label for="inputValidationEx2" data-error="wrong" data-success="right">Enter Amount</label>
+</div>
+</div> -->
 
-    <!-- Section -->
-    <section>
+<!-- Grid row -->
+<div class="row cloudy-knoxville-gradient d-flex justify-content-center mx-0 px-2 px-sm-0 my-0"
+    style="width:100% !important;">
 
+    <!-- Grid column -->
+    <div class="col-md-10 col-xl-11 mx-0 px-0 py-5">
 
+        <!--Accordion wrapper-->
+        <div class="accordion md-accordion accordion-2" id="accordionEx7" role="tablist" aria-multiselectable="true">
 
-        <!-- Modal -->
-        <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body p-0">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+            <!-- Accordion card -->
+            <div class="card z-depth-1 rgba-stylish-strong border-primary borderc mb-3 mx-0 p-2">
 
-                        <!-- Grid row -->
-                        <div class="row">
+                <!-- Card header -->
+                <div class="card-header mb-1" role="tab" id="heading1">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="https://simpauldesign.com/wp-content/uploads/2019/10/equity-bank-new-logo.png"
+                                style="width:100% !important;height:20vh !important;" alt="">
+                        </div>
+                        <div class="col row py-md-3  mt-1 mx-0 px-0 mt-md-0">
 
-                            <!-- Grid column -->
-                            <div class="col-md-6 py-5 pl-5">
-
-                                <h5 class="font-weight-normal mb-3">Paper cup mockup</h5>
-
-                                <p class="text-muted">Key letters, explain which writing we he carpeting or fame, the
-                                    itch expand medical amped through constructing time. And scarfs, gain, get showed
-                                    accounts decades.</p>
-
-                                <ul class="list-unstyled font-small mt-5">
-                                    <li>
-                                        <p class="text-uppercase mb-2"><strong>Client</strong></p>
-                                        <p class="text-muted mb-4">Envato Inc.</p>
-                                    </li>
-
-                                    <li>
-                                        <p class="text-uppercase mb-2"><strong>Date</strong></p>
-                                        <p class="text-muted mb-4">June 27, 2019</p>
-                                    </li>
-
-                                    <li>
-                                        <p class="text-uppercase mb-2"><strong>Skills</strong></p>
-                                        <p class="text-muted mb-4">Design, HTML, CSS, Javascript</p>
-                                    </li>
-
-                                    <li>
-                                        <p class="text-uppercase mb-2"><strong>Address</strong></p>
-                                        <a href="https://mdbootstrap.com/docs/jquery/design-blocks/">MDBootstrap</a>
-                                    </li>
-                                </ul>
-
-                            </div>
-                            <!-- Grid column -->
-
-                            <!-- Grid column -->
-                            <div class="col-md-6">
-
-                                <div class="view rounded-right">
-                                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/5.jpg"
-                                        alt="Sample image">
+                            <div class="col-12 mx-0 px-0  row">
+                                <div class="col row mx-0 px-0">
+                                    <div class="col-12 col-md-3 row text-md-center">
+                                        <div class="col-6 col-md-12 text-muted">
+                                            Interest
+                                        </div>
+                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
+                                            5%
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 row text-md-center">
+                                        <div class="col-6 col-md-12 text-muted">
+                                            Admin Fee
+                                        </div>
+                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
+                                            YES
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 row text-md-center">
+                                        <div class="col-6 col-md-12 text-muted">
+                                            Minimum
+                                        </div>
+                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
+                                            KES10,500.00
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 row text-md-center">
+                                        <div class="col-6 col-md-12 text-muted">
+                                            Maximum
+                                        </div>
+                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
+                                            KES200,500.00
+                                        </div>
+                                    </div>
                                 </div>
 
+                                <div class="col-md-3 text-center my-2 my-md-0">
+                                    <a href="/compare" type="button"
+                                        class="btn btn-primary btn-rounded btn-md ml-md-0 z-depth-1 mx-2"
+                                        style="width:90%;"><i class="fas fa-pen-alt"></i> Apply Now</a>
+                                </div>
                             </div>
-                            <!-- Grid column -->
+                            <a class="col-12 my-2 text-center" data-toggle="collapse" data-parent="#accordionEx7"
+                                href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                More details
+                            </a>
 
                         </div>
-                        <!-- Grid row -->
+                    </div>
 
+                </div>
+
+                <!-- Card body -->
+                <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1"
+                    data-parent="#accordionEx7">
+                    <div class="card-body mb-1">
+                        <div class="row">
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Salaried
+                                </div>
+                                <div class="col-12 text-dark">
+                                    Required
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Salaried Duration
+                                </div>
+                                <div class="col-12 text-dark">
+                                    2 Years
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Security
+                                </div>
+                                <div class="col-12 text-dark">
+                                    Required
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Security Type
+                                </div>
+                                <div class="col-12 text-dark">
+                                    Property
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Minimum Duration
+                                </div>
+                                <div class="col-12 text-dark">
+                                    12 Months
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Maximum Duration
+                                </div>
+                                <div class="col-12 text-dark">
+                                    5 Years
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- Accordion card -->
+
+            <!-- Accordion card -->
+            <div class="card z-depth-1 rgba-stylish-strong border-primary borderc mb-3 mx-0 p-2">
+
+                <!-- Card header -->
+                <div class="card-header mb-1" role="tab" id="heading1">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="https://simpauldesign.com/wp-content/uploads/2019/10/equity-bank-new-logo.png"
+                                style="width:100% !important;height:20vh !important;" alt="">
+                        </div>
+                        <div class="col row py-md-3  mt-1 mx-0 px-0 mt-md-0">
+
+                            <div class="col-12 mx-0 px-0  row">
+                                <div class="col row mx-0 px-0">
+                                    <div class="col-12 col-md-3 row text-md-center">
+                                        <div class="col-6 col-md-12 text-muted">
+                                            Interest
+                                        </div>
+                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
+                                            5%
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 row text-md-center">
+                                        <div class="col-6 col-md-12 text-muted">
+                                            Admin Fee
+                                        </div>
+                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
+                                            YES
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 row text-md-center">
+                                        <div class="col-6 col-md-12 text-muted">
+                                            Minimum
+                                        </div>
+                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
+                                            KES10,500.00
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 row text-md-center">
+                                        <div class="col-6 col-md-12 text-muted">
+                                            Maximum
+                                        </div>
+                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
+                                            KES200,500.00
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 text-center my-2 my-md-0">
+                                    <a href="/compare" type="button"
+                                        class="btn btn-primary btn-rounded btn-md ml-md-0 z-depth-1 mx-2"
+                                        style="width:90%;"><i class="fas fa-pen-alt"></i> Apply Now</a>
+                                </div>
+                            </div>
+                            <a class="col-12 my-2 text-center" data-toggle="collapse" data-parent="#accordionEx7"
+                                href="#collapse12" aria-expanded="true" aria-controls="collapse12">
+                                More details
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Card body -->
+                <div id="collapse12" class="collapse" role="tabpanel" aria-labelledby="heading12"
+                    data-parent="#accordionEx7">
+                    <div class="card-body mb-1">
+                        <div class="row">
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Salaried
+                                </div>
+                                <div class="col-12 text-dark">
+                                    Required
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Salaried Duration
+                                </div>
+                                <div class="col-12 text-dark">
+                                    2 Years
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Security
+                                </div>
+                                <div class="col-12 text-dark">
+                                    Required
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Security Type
+                                </div>
+                                <div class="col-12 text-dark">
+                                    Property
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Minimum Duration
+                                </div>
+                                <div class="col-12 text-dark">
+                                    12 Months
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Maximum Duration
+                                </div>
+                                <div class="col-12 text-dark">
+                                    5 Years
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Accordion card -->
+
+
+            <!-- Accordion card -->
+            <div class="card z-depth-1 rgba-stylish-strong border-primary borderc mb-3 mx-0 p-2">
+
+                <!-- Card header -->
+                <div class="card-header mb-1" role="tab" id="heading13">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="https://simpauldesign.com/wp-content/uploads/2019/10/equity-bank-new-logo.png"
+                                style="width:100% !important;height:20vh !important;" alt="">
+                        </div>
+                        <div class="col row py-md-3  mt-1 mx-0 px-0 mt-md-0">
+
+                            <div class="col-12 mx-0 px-0  row">
+                                <div class="col row mx-0 px-0">
+                                    <div class="col-12 col-md-3 row text-md-center">
+                                        <div class="col-6 col-md-12 text-muted">
+                                            Interest
+                                        </div>
+                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
+                                            5%
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 row text-md-center">
+                                        <div class="col-6 col-md-12 text-muted">
+                                            Admin Fee
+                                        </div>
+                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
+                                            YES
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 row text-md-center">
+                                        <div class="col-6 col-md-12 text-muted">
+                                            Minimum
+                                        </div>
+                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
+                                            KES10,500.00
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3 row text-md-center">
+                                        <div class="col-6 col-md-12 text-muted">
+                                            Maximum
+                                        </div>
+                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
+                                            KES200,500.00
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 text-center my-2 my-md-0">
+                                    <a href="/compare" type="button"
+                                        class="btn btn-primary btn-rounded btn-md ml-md-0 z-depth-1 mx-2"
+                                        style="width:90%;"><i class="fas fa-pen-alt"></i> Apply Now</a>
+                                </div>
+                            </div>
+                            <a class="col-12 my-2 text-center" data-toggle="collapse" data-parent="#accordionEx7"
+                                href="#collapse13" aria-expanded="true" aria-controls="collapse13">
+                                More details
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Card body -->
+                <div id="collapse13" class="collapse" role="tabpanel" aria-labelledby="heading13"
+                    data-parent="#accordionEx7">
+                    <div class="card-body mb-1">
+                        <div class="row">
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Salaried
+                                </div>
+                                <div class="col-12 text-dark">
+                                    Required
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Salaried Duration
+                                </div>
+                                <div class="col-12 text-dark">
+                                    2 Years
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Security
+                                </div>
+                                <div class="col-12 text-dark">
+                                    Required
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Security Type
+                                </div>
+                                <div class="col-12 text-dark">
+                                    Property
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Minimum Duration
+                                </div>
+                                <div class="col-12 text-dark">
+                                    12 Months
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <div class="col-12 font-weight-bold colorb">
+                                    Maximum Duration
+                                </div>
+                                <div class="col-12 text-dark">
+                                    5 Years
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Accordion card -->
+
         </div>
+        <!--/.Accordion wrapper-->
 
-        <h6 class="font-weight-bold text-center grey-text text-uppercase small mb-4">portfolio</h6>
-        <h3 class="font-weight-bold text-center dark-grey-text pb-2">Product Designs</h3>
-        <hr class="w-header my-4">
-        <p class="lead text-center text-muted pt-2 mb-5">You can find several product design by our professional team in
-            this section.</p>
-
-        <!-- Grid row -->
-        <div class="row">
-
-            <!-- Grid column -->
-            <div class="col-md-12 dark-grey-text d-flex justify-content-center mb-5">
-
-                <button type="button" class="btn btn-flat btn-lg m-0 px-3 py-1 filter" data-rel="all">All</button>
-                <p class="font-weight-bold mb-0 px-1 py-1">/</p>
-                <button type="button" class="btn btn-flat btn-lg m-0 px-3 py-1 filter" data-rel="1">Design</button>
-                <p class="font-weight-bold mb-0 px-1 py-1">/</p>
-                <button type="button" class="btn btn-flat btn-lg m-0 px-3 py-1 filter" data-rel="2">Mockup</button>
-
-            </div>
-            <!-- Grid column -->
-
-        </div>
-        <!-- Grid row -->
-
-        <!-- Grid row -->
-        <div class="gallery mb-5" id="gallery">
-
-            <!-- Grid column -->
-            <div class="mb-3 pics all 2 animation">
-                <a data-toggle="modal" data-target="#basicExampleModal">
-                    <img class="img-fluid z-depth-1 rounded"
-                        src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" alt="Card image cap">
-                </a>
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="mb-3 pics animation all 1">
-                <a data-toggle="modal" data-target="#basicExampleModal">
-                    <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Vertical/7.jpg"
-                        alt="Card image cap">
-                </a>
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="mb-3 pics animation all 1">
-                <a data-toggle="modal" data-target="#basicExampleModal">
-                    <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Vertical/4.jpg"
-                        alt="Card image cap">
-                </a>
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="mb-3 pics all 2 animation">
-                <a data-toggle="modal" data-target="#basicExampleModal">
-                    <img class="img-fluid z-depth-1 rounded"
-                        src="https://mdbootstrap.com/img/Photos/Others/images/63.jpg" alt="Card image cap">
-                </a>
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="mb-3 pics all 2 animation">
-                <a data-toggle="modal" data-target="#basicExampleModal">
-                    <img class="img-fluid z-depth-1 rounded"
-                        src="https://mdbootstrap.com/img/Photos/Others/images/64.jpg" alt="Card image cap">
-                </a>
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="mb-3 pics animation all 1">
-                <a data-toggle="modal" data-target="#basicExampleModal">
-                    <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Vertical/5.jpg"
-                        alt="Card image cap">
-                </a>
-            </div>
-            <!-- Grid column -->
-
-        </div>
-        <!-- Grid row -->
-
-    </section>
-    <!-- Section -->
+    </div>
+    <!-- Grid column -->
 
 </div>
+<!-- Grid row -->
 @endsection
 
 
 @section('pagescripts')
 <script type="text/javascript">
-$(function() {
-    var selectedClass = "";
-    $(".filter").click(function() {
-        selectedClass = $(this).attr("data-rel");
-        $("#gallery").fadeTo(100, 0.1);
-        $("#gallery div").not("." + selectedClass).fadeOut().removeClass('animation');
-        setTimeout(function() {
-            $("." + selectedClass).fadeIn().addClass('animation');
-            $("#gallery").fadeTo(300, 1);
-        }, 300);
-    });
-});
+
 </script>
 @endsection
