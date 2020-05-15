@@ -79,11 +79,12 @@
 
         <nav class="navbar navbar-expand-lg 
         @if(isset($navbar) && $navbar == 'transparent')
+        cloudy-knoxville-gradient
         @else
         navbar-dark bga blue-gradient
         @endif
-         z-depth-0">
-            <div class="container">
+         z-depth-0 ">
+            <div class="container mx-0" style="width:100% !important;max-width: 1840px !important;">
                 <a class="navbar-brand" href="/"><strong>{{config('app.name')}}</strong></a>
                 @if(isset($pagename))
                 <div class="mr-1 text-primary">
@@ -103,7 +104,7 @@
 
     <body>
 
-        <main class="vc">
+        <main class="vc cloudy-knoxville-gradient">
             @yield('body')
         </main>
         @if(isset($navbar) && $navbar == 'transparent')

@@ -22,7 +22,7 @@
 </div> -->
 
 <!-- Grid row -->
-<div class="light-font my-0 py-0 rounded-0" style="width:100% !important;">
+<!-- <div class="light-font my-0 py-0 rounded-0" style="width:100% !important;">
     <nav aria-label="breadcrumb my-0 py-0 rounded-0" style="width:100% !important;">
         <ol class="breadcrumb cyan lighten-4 my-0 rounded-0" style="width:100% !important;">
             <li class="breadcrumb-item"><a class="" href="/loans">Loans</a></li>
@@ -31,7 +31,7 @@
             </li>
         </ol>
     </nav>
-</div>
+</div> -->
 <div class="row cloudy-knoxville-gradient d-flex justify-content-center mx-0 px-2 px-md-0 my-0"
     style="width:100% !important;">
 

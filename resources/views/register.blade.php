@@ -10,7 +10,7 @@
 
 @section('body')
 <!-- Material form register -->
-<div class="card z-depth-0">
+<div class="card cloudy-knoxville-gradient z-depth-0">
 
     <!--Card content-->
     <div class="card-body px-lg-5 pt-0">

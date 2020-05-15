@@ -129,7 +129,7 @@ button.close {
                         <h5 class="colora"><i class="fas fa-university"></i> 5</h5>
                         <h3 class="card-title pt-2"><strong>Car Loan</strong></h3>
                         <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
+                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 "><i
                                 class="fas fa-clone left"></i> Compare</a>
                     </div>
                 </div>
@@ -145,7 +145,7 @@ button.close {
                         <h5 class="colora"><i class="fas fa-university"></i> 3</h5>
                         <h3 class="card-title pt-2"><strong>Mortgage Loan</strong></h3>
                         <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
+                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
                                 class="fas fa-clone left"></i> Compare</a>
                     </div>
                 </div>
@@ -161,7 +161,7 @@ button.close {
                         <h5 class="colora"><i class="fas fa-university"></i> 2</h5>
                         <h3 class="card-title pt-2"><strong>Salary Loan</strong></h3>
                         <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
+                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
                                 class="fas fa-clone left"></i> Compare</a>
                     </div>
                 </div>
@@ -177,7 +177,7 @@ button.close {
                         <h5 class="colora"><i class="fas fa-university"></i> 12</h5>
                         <h3 class="card-title pt-2"><strong>Weekend Loan</strong></h3>
                         <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
+                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
                                 class="fas fa-clone left"></i> Compare</a>
                     </div>
                 </div>
@@ -193,7 +193,7 @@ button.close {
                         <h5 class="colora"><i class="fas fa-university"></i> 37</h5>
                         <h3 class="card-title pt-2"><strong>Credit Card</strong></h3>
                         <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
+                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
                                 class="fas fa-clone left"></i> Compare</a>
                     </div>
                 </div>
@@ -209,7 +209,7 @@ button.close {
                         <h5 class="colora"><i class="fas fa-university"></i> 64</h5>
                         <h3 class="card-title pt-2"><strong>Log Book Loan</strong></h3>
                         <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
+                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
                                 class="fas fa-clone left"></i> Compare</a>
                     </div>
                 </div>
@@ -225,7 +225,7 @@ button.close {
                         <h5 class="colora"><i class="fas fa-university"></i> 251</h5>
                         <h3 class="card-title pt-2"><strong>Title deed Loan</strong></h3>
                         <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
+                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
                                 class="fas fa-clone left"></i> Compare</a>
                     </div>
                 </div>
@@ -241,7 +241,7 @@ button.close {
                         <h5 class="colora"><i class="fas fa-university"></i> 8</h5>
                         <h3 class="card-title pt-2"><strong>Import Finance</strong></h3>
                         <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
+                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
                                 class="fas fa-clone left"></i> Compare</a>
                     </div>
                 </div>
@@ -257,7 +257,7 @@ button.close {
                         <h5 class="colora"><i class="fas fa-university"></i> 17</h5>
                         <h3 class="card-title pt-2"><strong>Chamaa Loan</strong></h3>
                         <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
+                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
                                 class="fas fa-clone left"></i> Compare</a>
                     </div>
                 </div>

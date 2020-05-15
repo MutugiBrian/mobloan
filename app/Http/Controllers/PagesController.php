@@ -23,4 +23,22 @@ class PagesController extends Controller
         return view('login')->with($data);
     }
 
+    public function loans(){
+        $data = array(
+            'navbar'=>'transparent',
+            'pagename'=>'loans',
+           );
+        return view('loans')->with($data);
+    }
+
+    public function compare(){
+        $data = array(
+            'navbar'=>'transparent',
+            'pagename'=>'car loan',
+           );
+        return view('compare')->with($data);
+    }
+
+
+
 }

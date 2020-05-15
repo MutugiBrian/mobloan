@@ -17,13 +17,9 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::get('/loans', function () {
-    return view('loans');
-});
+
+Route::get('/loans', 'PagesController@loans');
 
 Route::get('/register', 'PagesController@register');
 Route::get('/login', 'PagesController@login');
-
-Route::get('/compare', function () {
-    return view('compare');
-});
+Route::get('/compare', 'PagesController@compare');
