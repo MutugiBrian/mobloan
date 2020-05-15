@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
+});
+
+Route::get('/loans', function () {
+    return view('loans');
+});
+
+Route::get('/register', function () {
+    return view('register');
+});
+
+Route::get('/compare', function () {
+    return view('compare');
 });

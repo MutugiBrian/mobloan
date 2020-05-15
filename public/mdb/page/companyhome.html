@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{{config('app.name')}} - Company</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="../img/mdb-favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="../css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<style>
+  html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 1000px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 650px;
+  }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  .navbar:not(.top-nav-collapse) {
+     background: #3f51b5!important;
+  }
+}
+
+/* #3FD2C7#99DDFF#3f51b5*/
+/* Navbar animation */
+.navbar {
+  background-color: rgba(63, 81, 181, 1); }
+
+.top-nav-collapse {
+  background-color: #3f51b5; }
+
+
+
+/* Adding color to the Navbar on mobile */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #3f51b5; }
+  
+   }
+
+/* Footer color for sake of consistency with Navbar */
+.page-footer {
+  background-color: #3f51b5; 
+  }
+
+.colora{
+  color: #3f51b5; 
+}
+.bga{
+  background-color: #3f51b5; 
+}
+.colorb{
+  color: #99DDFF; 
+}
+.bgl{
+  background-color: #99DDFF; 
+}
+.bgi{
+  background-color:#f4f4f7;
+}
+.colorc{
+  color: #3FD2C7; 
+}
+.bgc{
+  background-color: #3FD2C7; 
+}
+.sizea{
+  font-size: x-large;
+}
+.sizeb{
+  font-size: large;
+}
+.coimage{
+  height: 165px;
+  width: 250px;
+}
+
+.vc {
+  /* margin: 0;
+  position: absolute;
+  top: 70%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); */
+  width: 100% !important;
+
+}
+.obuttona{
+  color: #3f51b5 !important;
+  border:2px solid #3f51b5 !important;
+}
+.obuttonb{
+  color: #99DDFF !important;
+  border:2px solid #99DDFF !important;
+}
+.obuttonc{
+  color: #3FD2C7 !important;
+  border:2px solid #3FD2C7 !important;
+}
+.nb{
+    border:none !important;
+}
+.cbuttonw{
+ background-color: white;
+ color: black !important;
+}
+
+.cbuttonw:hover{
+ background-color: #3f51b5;
+ color: white !important;
+}
+.mts{
+    margin-top: 13%;
+}
+
+
+
+
+</style>
+<body class="bgi">
+
+<!--Main layout-->
+<nav class="navbar navbar-expand-lg navbar-dark  z-depth-0">
+    <div class="container">
+  
+      <!-- Brand -->
+      <a class="navbar-brand" href="companyhome.html" >
+        <strong>{{config('app.name')}}</strong>
+      </a>
+  
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="companyhome.html">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-light">1
+              <i class="fas fa-bell"></i>
+            </a>
+          </li>
+        </ul>
+  
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <!-- <li class="nav-item">
+            <a href="https://www.facebook.com" class="nav-link" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li> -->
+          
+          
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"> Company</a>
+            <div class="dropdown-menu dropdown-menu-left dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+              <a class="dropdown-item" href="companyprofile.html">My account</a>
+              <a class="dropdown-item" href="#" data-toggle="modal" data-parent="#accordionEx" data-target="#modalConfirmLogOut">Log out</a>
+            </div>
+          </li>
+          <li class="nav-item avatar">
+            <a class="nav-link p-0" href="#">
+              <img src="../img/companylogos/logo3.png" class="rounded-circle z-depth-0"
+                alt="user image" height="35">
+            </a>
+          </li>
+        </ul>
+  
+      </div>
+  
+    </div>
+  </nav>
+  <!-- Navbar -->
+<main style="min-height: 81.4%;">
+  <center>
+
+</div>
+ <div class="vc">
+
+    <div class="row text-center d-flex justify-content-center mt-5 mx-2 p-2">
+        
+        <div class="col-6 col-md-6 col-lg-6 col-xl-6 mb-5  py-0 px-2 px-md-3 px-lg-5 px-xl-5">
+            <div class="card z-depth-0">
+             <div class="py-3">
+                <i class="fas fa-search fa-5x mb-4 colorc"></i>
+                <h4 class=" mb-4 colora sizeb">
+                Data
+                </h4>
+                <p class="text-muted px-2 mb-md-0">
+                Real estate data.
+                <br />
+                Query our rich database.
+                </p>
+              </div>
+                <hr class="mx-3 p-0">
+                <a href="companyquery.html">
+                <p class="text-muted px-2 py-1 colora sizea">
+                Query Data
+                </p>
+                </a>
+           </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-6 col-xl-6 mb-5  py-0 px-2 px-md-3 px-lg-5 px-xl-5">
+            <div class="card z-depth-0">
+             <div class="py-3">
+                <i class="fas fa-bell fa-5x mb-4 colorc"></i>
+                <h4 class=" mb-4 colora sizeb">
+                Notices
+                </h4>
+                <p class="text-muted px-2 mb-md-0">
+                Alerts and messages.
+                <br />
+                View, reply and act.
+                </p>
+              </div>
+                <hr class="mx-3 p-0">
+                <a href="companynotifications.html">
+                <p class="text-muted px-2 py-1 colora sizea">
+                View Notices
+                </p>
+                </a>
+           </div>
+        </div>
+
+        <div class="col-6 col-md-6 col-lg-6 col-xl-6 mb-5  py-0 px-2 px-md-3 px-lg-5 px-xl-5">
+            <div class="card z-depth-0">
+             <div class="py-3">
+                <i class="fas fa-user fa-5x mb-4 colorc"></i>
+                <h4 class=" mb-4 colora sizeb">
+                Users
+                </h4>
+                <p class="text-muted px-2 mb-md-0">
+                They query under this company.
+                <br />
+                View, edit or deactivate.
+                </p>
+              </div>
+                <hr class="mx-3 p-0">
+                <a href="companyusers.html">
+                <p class="text-muted px-2 py-1 colora sizea">
+                Manage Users
+                </p>
+                </a>
+           </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-6 col-xl-6 mb-5  py-0 px-2 px-md-3 px-lg-5 px-xl-5">
+            <div class="card z-depth-0">
+             <div class="py-3">
+                <i class="far fa-user-circle fa-5x mb-4 colorc"></i>
+                <h4 class=" mb-4 colora sizeb">
+                Profile
+                </h4>
+                <p class="text-muted px-2 mb-md-0">
+                Your user details.
+                <br />
+                View or change your details.
+                </p>
+              </div>
+                <hr class="mx-3 p-0">
+                <a href="companyprofile.html">
+                <p class="text-muted px-2 py-1 colora sizea">
+                Manage Profile
+                </p>
+                </a>
+           </div>
+        </div>
+
+      </div>
+  
+      </div>
+  </div>
+ </div>
+   
+</center>
+
+
+<!--Modal: modalConfirmLogOut-->
+<div class="modal fade" id="modalConfirmLogOut" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">Are you sure you want to logout?</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+
+        <i class="fas fa-power-off fa-4x animated rotateIn"></i>
+
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer flex-center">
+        <a href="../index.html" class="btn  btn-outline-danger">Yes</a>
+        <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">No</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!--Modal: modalConfirmLogOut-->
+
+</main>
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+    <div class="footer-copyright py-3">
+      © 2020 Copyright:
+      <a href="#"> {{config('app.name')}} </a>
+    </div>
+</footer>
+
+<!--Main layout-->
+  <!-- End your project here-->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="../js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="../js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript">
+
+
+(function() {
+'use strict';
+window.addEventListener('load', function() {
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.getElementsByClassName('needs-validation');
+// Loop over them and prevent submission
+var validation = Array.prototype.filter.call(forms, function(form) {
+form.addEventListener('submit', function(event) {
+if (form.checkValidity() === false) {
+event.preventDefault();
+event.stopPropagation();
+}
+form.classList.add('was-validated');
+}, false);
+});
+}, false);
+})();
+
+  $(document).ready(function() {
+
+  new WOW().init();
+  
+ });
+  </script>
+
+</body>
+</html>
