@@ -77,12 +77,24 @@
     <!--Main Navigation-->
     <header>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bga blue-gradient z-depth-0">
+        <nav class="navbar navbar-expand-lg 
+        @if(isset($navbar) && $navbar == 'transparent')
+        @else
+        navbar-dark bga blue-gradient
+        @endif
+         z-depth-0">
             <div class="container">
                 <a class="navbar-brand" href="/"><strong>{{config('app.name')}}</strong></a>
+                @if(isset($pagename))
+                <div class="mr-1 text-primary">
+                    {{$pagename}}
+                </div>
+                @else
                 <div class="mr-1 text-white">
                     Loan comparator
                 </div>
+                @endif
+
             </div>
         </nav>
     </header>
@@ -94,12 +106,16 @@
         <main class="vc">
             @yield('body')
         </main>
+        @if(isset($navbar) && $navbar == 'transparent')
+        @else
         <footer class="page-footer text-center font-small mt-0 bga blue-gradient">
             <div class="footer-copyright py-3">
                 © 2020 Copyright:
                 <a href="#"> {{config('app.name')}} </a>
             </div>
         </footer>
+
+        @endif
 
         <!--Main layout-->
         <!-- End your project here-->
