@@ -77,7 +77,7 @@
     <!--Main Navigation-->
     <header>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bga z-depth-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bga blue-gradient z-depth-0">
             <div class="container">
                 <a class="navbar-brand" href="/"><strong>{{config('app.name')}}</strong></a>
                 <div class="mr-1 text-white">
@@ -94,7 +94,7 @@
         <main class="vc">
             @yield('body')
         </main>
-        <footer class="page-footer text-center font-small mt-0 bga">
+        <footer class="page-footer text-center font-small mt-0 bga blue-gradient">
             <div class="footer-copyright py-3">
                 © 2020 Copyright:
                 <a href="#"> {{config('app.name')}} </a>
@@ -133,6 +133,11 @@
         <script src="{{ asset('others/sylvester.min.js') }}"></script>
         </script>
         <script src="{{ asset('others/1.0.0.js') }}"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $('.mdb-select').materialSelect();
+        });
+        </script>
         @yield('pagescripts')
     </body>
 
