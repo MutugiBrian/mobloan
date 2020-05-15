@@ -39,11 +39,11 @@
     <!-- Grid column -->
     <div class="col-md-10 col-xl-11 mx-0 px-0 py-0">
 
-        <div class="row mt-1 ">
-            <div class="col-md-6 text-primary text-left py-2">
+        <div class="row mt-1 mx-1">
+            <div class="col-6 text-primary text-left py-2">
                 Sort by
             </div>
-            <div class="col-md-6 text-right my-0 py-0 row">
+            <div class="col-6 text-right my-0 py-0 row">
                 <div class="col-md-8"></div>
                 <select class="mdb-select md-form my-0 py-0 col-md-4">
                     <option value="" disabled selected>choose option</option>
