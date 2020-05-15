@@ -1,0 +1,89 @@
+@extends('layout.app')
+
+
+@section('pagestyle')
+<style>
+
+</style>
+@endsection
+
+
+@section('body')
+<div class="container my-5 px-0 z-depth-0">
+
+    <div class="my-5 z-depth-0 mx-4">
+
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <!-- Material form login -->
+                <div class="card z-depth-0 bgi ">
+
+                    <!--Card content-->
+                    <div class="card-body">
+
+                        <!-- Form -->
+                        <form class="text-center mx-3 px-3 needs-validation" style="color: #757575;"
+                            action="{{ URL::to('/user/login') }}" method="POST" novalidate>
+
+                            <div class="my-4">
+                                <div class="md-form">
+                                    <input type="email" id="materialLoginFormEmail" class="form-control">
+                                    <label for="materialLoginFormEmail">E-mail</label>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="my-4">
+                                <div class="md-form">
+                                    <input type="password" id="materialLoginFormPassword" class="form-control">
+                                    <label for="materialLoginFormPassword">Password</label>
+                                </div>
+                            </div>
+
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+
+                            <div class="text-center mt-3">
+                                <button class="btn btn-cyan btn-rounded btn-block my-4 waves-effect z-depth-0"
+                                    type="submit">Login</button>
+
+                            </div>
+
+                            <div class="row mt-3 colora">
+                                <small id="passwordHelpBlock" class="form-text text-right col">
+                                    <a class="colorb" href="{{url('/forgotpass')}}">Forgot Password??</a>
+                                </small>
+                                <small id="passwordHelpBlock" class="form-text text-left col colorb">
+                                    <a class="colorb" href="{{ url('/register') }}">No
+                                        Account?&nbsp;Register</a>
+                                </small>
+                            </div>
+
+
+                        </form>
+                        <!-- Form -->
+
+
+
+                    </div>
+
+                </div>
+                <!-- Material form login -->
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+<!-- Material form login -->
+
+<!-- Material form login -->
+
+@endsection
+
+
+@section('pagescripts')
+<script type="text/javascript">
+</script>
+@endsection

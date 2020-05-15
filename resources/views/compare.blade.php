@@ -22,11 +22,37 @@
 </div> -->
 
 <!-- Grid row -->
-<div class="row cloudy-knoxville-gradient d-flex justify-content-center mx-0 px-2 px-sm-0 my-0"
+<div class="light-font my-0 py-0 rounded-0" style="width:100% !important;">
+    <nav aria-label="breadcrumb my-0 py-0 rounded-0" style="width:100% !important;">
+        <ol class="breadcrumb cyan lighten-4 my-0 rounded-0" style="width:100% !important;">
+            <li class="breadcrumb-item"><a class="" href="/loans">Loans</a></li>
+            <li class="breadcrumb-item active"><a class="font-weight-bold" href="#">car
+                    loan</a>
+            </li>
+        </ol>
+    </nav>
+</div>
+<div class="row cloudy-knoxville-gradient d-flex justify-content-center mx-0 px-2 px-md-0 my-0"
     style="width:100% !important;">
 
+
     <!-- Grid column -->
-    <div class="col-md-10 col-xl-11 mx-0 px-0 py-5">
+    <div class="col-md-10 col-xl-11 mx-0 px-0 py-0">
+
+        <div class="row mt-1 ">
+            <div class="col-md-6 text-primary text-left py-2">
+                Sort by
+            </div>
+            <div class="col-md-6 text-right my-0 py-0 row">
+                <div class="col-md-8"></div>
+                <select class="mdb-select md-form my-0 py-0 col-md-4">
+                    <option value="" disabled selected>choose option</option>
+                    <option value="1">Lowest interest</option>
+                    <option value="2">Maximum amount</option>
+                    <option value="3">Maximum duration</option>
+                </select>
+            </div>
+        </div>
 
         <!--Accordion wrapper-->
         <div class="accordion md-accordion accordion-2" id="accordionEx7" role="tablist" aria-multiselectable="true">

@@ -21,9 +21,8 @@ Route::get('/loans', function () {
     return view('loans');
 });
 
-Route::get('/register', function () {
-    return view('register');
-});
+Route::get('/register', 'PagesController@register');
+Route::get('/login', 'PagesController@login');
 
 Route::get('/compare', function () {
     return view('compare');
