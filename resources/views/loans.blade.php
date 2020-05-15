@@ -117,7 +117,7 @@ button.close {
 
 
 @section('body')
-<div class="container-fluid mt-0 pt-0">
+<div class="container-fluid cloudy-knoxville-gradient mt-0 pt-0">
     <div class="grid mt-0 pt-0">
         <div class="grid-sizer"></div>
         <div class="grid-item">
@@ -126,7 +126,7 @@ button.close {
                 <!-- Content -->
                 <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                     <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-briefcase"></i> 5</h5>
+                        <h5 class="colora"><i class="fas fa-university"></i> 5</h5>
                         <h3 class="card-title pt-2"><strong>Car Loan</strong></h3>
                         <p></p>
                         <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
@@ -142,7 +142,7 @@ button.close {
                 <!-- Content -->
                 <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                     <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-briefcase"></i> 3</h5>
+                        <h5 class="colora"><i class="fas fa-university"></i> 3</h5>
                         <h3 class="card-title pt-2"><strong>Mortgage Loan</strong></h3>
                         <p></p>
                         <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
@@ -158,7 +158,7 @@ button.close {
                 <!-- Content -->
                 <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                     <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-briefcase"></i> 2</h5>
+                        <h5 class="colora"><i class="fas fa-university"></i> 2</h5>
                         <h3 class="card-title pt-2"><strong>Salary Loan</strong></h3>
                         <p></p>
                         <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
@@ -174,7 +174,7 @@ button.close {
                 <!-- Content -->
                 <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                     <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-briefcase"></i> 12</h5>
+                        <h5 class="colora"><i class="fas fa-university"></i> 12</h5>
                         <h3 class="card-title pt-2"><strong>Weekend Loan</strong></h3>
                         <p></p>
                         <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
@@ -190,7 +190,7 @@ button.close {
                 <!-- Content -->
                 <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                     <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-briefcase"></i> 37</h5>
+                        <h5 class="colora"><i class="fas fa-university"></i> 37</h5>
                         <h3 class="card-title pt-2"><strong>Credit Card</strong></h3>
                         <p></p>
                         <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
@@ -206,7 +206,7 @@ button.close {
                 <!-- Content -->
                 <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                     <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-briefcase"></i> 64</h5>
+                        <h5 class="colora"><i class="fas fa-university"></i> 64</h5>
                         <h3 class="card-title pt-2"><strong>Log Book Loan</strong></h3>
                         <p></p>
                         <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
@@ -222,7 +222,7 @@ button.close {
                 <!-- Content -->
                 <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                     <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-briefcase"></i> 251</h5>
+                        <h5 class="colora"><i class="fas fa-university"></i> 251</h5>
                         <h3 class="card-title pt-2"><strong>Title deed Loan</strong></h3>
                         <p></p>
                         <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
@@ -238,7 +238,7 @@ button.close {
                 <!-- Content -->
                 <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                     <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-briefcase"></i> 8</h5>
+                        <h5 class="colora"><i class="fas fa-university"></i> 8</h5>
                         <h3 class="card-title pt-2"><strong>Import Finance</strong></h3>
                         <p></p>
                         <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i
@@ -254,7 +254,7 @@ button.close {
                 <!-- Content -->
                 <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                     <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-briefcase"></i> 17</h5>
+                        <h5 class="colora"><i class="fas fa-university"></i> 17</h5>
                         <h3 class="card-title pt-2"><strong>Chamaa Loan</strong></h3>
                         <p></p>
                         <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 bgb"><i

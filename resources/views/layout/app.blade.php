@@ -39,9 +39,16 @@
         background-color: #74d5de !important;
     }
 
+    .bordera {
+        border-color: #74d5de !important;
+    }
 
     .colorb {
         color: #D4AF37 !important;
+    }
+
+    .borderb {
+        border-color: #D4AF37 !important;
     }
 
     .bgb {
@@ -51,6 +58,11 @@
     .colorc {
         color: #fed385 !important;
     }
+
+    .borderc {
+        border-color: #fed385 !important;
+    }
+
 
     .bgc {
         background-color: #fed385 !important;
@@ -79,7 +91,7 @@
 
     <body>
 
-        <main class="my-5 vc">
+        <main class="vc">
             @yield('body')
         </main>
         <footer class="page-footer text-center font-small mt-0 bga">
