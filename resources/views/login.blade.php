@@ -9,17 +9,17 @@
 
 
 @section('body')
-<div class="container my-5 px-0 z-depth-0">
+<div class="container cloudy-knoxville-gradient py-5 px-0 z-depth-0">
 
-    <div class="my-5 z-depth-0 mx-4">
+    <div class="my-5 z-depth-0 mx-4 cloudy-knoxville-gradient">
 
-        <div class="row">
-            <div class="col-md-6 mx-auto">
+        <div class="row cloudy-knoxville-gradient">
+            <div class="col-md-6 mx-auto cloudy-knoxville-gradient">
                 <!-- Material form login -->
-                <div class="card z-depth-0 bgi ">
+                <div class="card z-depth-0 cloudy-knoxville-gradient ">
 
                     <!--Card content-->
-                    <div class="card-body">
+                    <div class="card-body cloudy-knoxville-gradient" style="min-height:60vh;">
 
                         <!-- Form -->
                         <form class="text-center mx-3 px-3 needs-validation" style="color: #757575;"
