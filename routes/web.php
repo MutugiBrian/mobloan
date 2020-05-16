@@ -19,7 +19,9 @@ Route::get('/', function () {
 
 
 Route::get('/loans', 'PagesController@loans');
-
 Route::get('/register', 'PagesController@register');
 Route::get('/login', 'PagesController@login');
 Route::get('/compare', 'PagesController@compare');
+
+
+Route::get('/adminhome', 'AdminController@home');

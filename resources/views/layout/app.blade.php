@@ -77,6 +77,28 @@
     <!--Main Navigation-->
     <header>
 
+        @if(isset($navbar) && $navbar == 'admin')
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bga blue-gradient z-depth-0">
+            <a class="navbar-brand" href="/adminhome"><strong>{{config('app.name')}}</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-sm-right" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/adminhome">Lenders <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/manageloans">Loans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/settings">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        @else
         <nav class="navbar navbar-expand-lg 
         @if(isset($navbar) && $navbar == 'transparent')
         cloudy-knoxville-gradient
@@ -87,8 +109,15 @@
             <div class="container mx-0" style="width:100% !important;max-width: 1840px !important;">
                 <a class="navbar-brand" href="/"><strong>{{config('app.name')}}</strong></a>
                 @if(isset($pagename))
-                <div class="mr-1 text-primary">
+                <div class="mr-1 
+                @if(isset($navbar) && $navbar == 'transparent')
+                text-primary
+                @else
+                text-white
+                @endif
+                ">
                     {{$pagename}}
+
                 </div>
                 @else
                 <div class="mr-1 text-white">
@@ -98,6 +127,7 @@
 
             </div>
         </nav>
+        @endif
     </header>
     <!--Main Navigation-->
     @yield('pagestyle')
@@ -136,20 +166,6 @@
         <script type="text/javascript" src="{{asset('mdb/js/addons/imagesloaded.pkgd.min.js')}}"></script>
         <!-- Your custom scripts (optional) -->
         <script src="{{ asset('others/dataTables.checkboxes.min.js') }}"></script>
-        <script src="{{ asset('highcharts/highcharts.js') }}"></script>
-        <script src="{{ asset('highcharts/modules/exporting.js') }}"></script>
-        <script src="{{ asset('highcharts/modules/export-data.js') }}"></script>
-        <script src="{{ asset('highcharts/modules/accessibility.js') }}"></script>
-        <script src="{{ asset('others/dataTables.buttons.min.js') }}"></script>
-        <script src="{{ asset('others/jszip.min.js') }}"></script>
-        <script src="{{ asset('others/buttons.flash.min.js') }}"></script>
-        <script src="{{ asset('others/pdfmake.min.js') }}"></script>
-        <script src="{{ asset('others/vfs_fonts.js') }}"></script>
-        <script src="{{ asset('others/buttons.html5.min.js') }}"></script>
-        <script src="{{ asset('others/buttons.print.min.js') }}"></script>
-        <script src="{{ asset('others/sylvester.min.js') }}"></script>
-        </script>
-        <script src="{{ asset('others/1.0.0.js') }}"></script>
         <script type="text/javascript">
         $(document).ready(function() {
             $('.mdb-select').materialSelect();
