@@ -86,13 +86,25 @@
             </button>
             <div class="collapse navbar-collapse text-sm-right" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item 
+                    @if($pagename == 'adminhome')
+                        active
+                    @endif
+                    ">
                         <a class="nav-link" href="/adminhome">Lenders <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item 
+                    @if($pagename == 'manageloans')
+                        active
+                    @endif
+                    ">
                         <a class="nav-link" href="/manageloans">Loans</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item 
+                    @if($pagename == 'settings')
+                        active
+                    @endif
+                    ">
                         <a class="nav-link" href="/settings">Settings</a>
                     </li>
                 </ul>

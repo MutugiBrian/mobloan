@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
+| routes are loaded by the RouteServiceProvider within a group whic\\\\
+
 | contains the "web" middleware group. Now create something great!
 |
 */
@@ -25,3 +26,5 @@ Route::get('/compare', 'PagesController@compare');
 
 
 Route::get('/adminhome', 'AdminController@home');
+Route::get('/manageloans', 'AdminController@manageloans');
+Route::get('/settings', 'AdminController@settings');
