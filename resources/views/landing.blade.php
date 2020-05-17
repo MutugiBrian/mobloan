@@ -42,7 +42,7 @@
                 <!-- Content -->
                 <div class="container h-100">
                     <!--Grid row-->
-                    <div class="row align-items-center h-100">
+                    <div class="row align-items-center h-100 p-5 p-sm-0">
                         <!--Grid column-->
                         <div class="col-md-6">
                             <h1 class="mb-4">Find the <span class="cyan-text">most friendly</span><br><span

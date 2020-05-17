@@ -42,7 +42,7 @@
                             <!-- First name -->
                             <div class="md-form">
                                 <div class="file-field">
-                                    <div class="btn btn-outline-cyan btn-rounded waves-effect btn-sm float-left">
+                                    <div class="btn btn-outline-primary btn-rounded waves-effect btn-sm float-left">
                                         <span>Choose file</span>
                                         <input type="file">
                                     </div>
@@ -90,7 +90,7 @@
                     </div>
 
                     <!-- Sign up button -->
-                    <button class="btn btn-cyan btn-rounded btn-block my-4 waves-effect z-depth-0"
+                    <button class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0"
                         type="submit">Register</button>
 
 
