@@ -19,7 +19,7 @@
         <div class="row">
 
             <!-- Grid column -->
-            <div class="col-md-5 mb-4 mb-md-0">
+            <div class="d-none d-sm-block col-md-5 mb-4 mb-md-0">
 
                 <div class="view">
                     <img src="https://mdbootstrap.com/img/illustrations/undraw_Group_chat_unwm.svg" class="img-fluid"
