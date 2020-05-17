@@ -146,7 +146,7 @@
 
     <body>
 
-        <main class="vc cloudy-knoxville-gradient">
+        <main class="vc cloudy-knoxville-gradient py-5">
             @yield('body')
         </main>
         @if(isset($navbar) && $navbar == 'transparent')
