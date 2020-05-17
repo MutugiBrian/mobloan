@@ -44,8 +44,8 @@
 
 
                             <div class="text-center mt-3">
-                                <button class="btn btn-cyan btn-rounded btn-block my-4 waves-effect z-depth-0"
-                                    type="submit">Login</button>
+                                <button class="btn btn-primary btn-rounded btn-block my-4 waves-effect" type="submit"><i
+                                        class="fas fa-sign-in-alt mr-1"></i> Login</button>
 
                             </div>
 

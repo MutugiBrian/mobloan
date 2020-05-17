@@ -90,8 +90,8 @@
                     </div>
 
                     <!-- Sign up button -->
-                    <button class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0"
-                        type="submit">Register</button>
+                    <button class="btn btn-primary btn-rounded btn-block my-4 waves-effect" type="submit"><i
+                            class="fas fa-user-plus mr-1"></i> Register</button>
 
 
                     <p>Registered ?
@@ -102,8 +102,8 @@
 
                     <!-- Terms of service -->
                     <p>By clicking
-                        <em>Sign up</em> you agree to our
-                        <a href="/terms" target="_blank">terms of service</a>
+                        <em>Register</em> you agree to our
+                        <a href="#" data-toggle="modal" data-target="#modalCookie1">terms of service</a>
 
                 </form>
                 <!-- Form -->
@@ -115,6 +115,45 @@
 
     </div>
 </div>
+
+
+<!--Modal: modalCookie-->
+<div class="modal fade top" id="modalCookie1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true" data-backdrop="true">
+    <div class="modal-dialog modal-frame modal-top modal-notify modal-info" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <div class="modal-header z-depth-0">
+                <p class="heading">Our terms of service
+                </p>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <div class="row d-flex justify-content-center align-items-center">
+
+                    <p class="p-2">We use cookies to improve your website experienceWe use cookies to improve your
+                        website experienceWe use cookies to improve your website experienceWe use cookies to improve
+                        your website experienceWe use cookies to improve your website experienceWe use cookies to
+                        improve your website experienceWe use cookies to improve your website experienceWe use cookies
+                        to improve your website experienceWe use cookies to improve your website experienceWe use
+                        cookies to improve your website experienceWe use cookies to improve your website experienceWe
+                        use cookies to improve your website experienceWe use cookies to improve your website
+                        experienceWe use cookies to improve your website experienceWe use cookies to improve your
+                        website experienceWe use cookies to improve your website experienceWe use cookies to improve
+                        your website experienceWe use cookies to improve your website experience</p>
+
+                    <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Ok, thanks</a>
+                </div>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!--Modal: modalCookie-->
 
 @endsection
 

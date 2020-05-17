@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use Schema;
 use Illuminate\Support\ServiceProvider;
+use view;
+use App\SiteSetting;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +26,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Schema::defaultStringLength(191);
+            //compose all the views....
+        view()->composer('*', function ($view) 
+        {
+            $settings = SiteSetting::where('id',1)->get();
+
+            //...with this variable
+            $view->with([
+                'settings'=> $settings
+                ]);    
+        }); 
     }
 }

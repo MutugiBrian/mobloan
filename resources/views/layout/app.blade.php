@@ -79,7 +79,7 @@
 
         @if(isset($navbar) && $navbar == 'admin')
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bga blue-gradient z-depth-0">
-            <a class="navbar-brand" href="/adminhome"><strong>{{config('app.name')}}</strong></a>
+            <a class="navbar-brand" href="/admin"><strong>{{config('app.name')}}</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -87,11 +87,11 @@
             <div class="collapse navbar-collapse text-sm-right" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item 
-                    @if($pagename == 'adminhome')
+                    @if($pagename == 'admin home')
                         active
                     @endif
                     ">
-                        <a class="nav-link" href="/adminhome">Lenders <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/admin">Lenders <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item 
                     @if($pagename == 'manageloans')
