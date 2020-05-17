@@ -25,6 +25,10 @@ Route::get('/login', 'PagesController@login');
 Route::get('/compare', 'PagesController@compare');
 
 
-Route::get('/adminhome', 'AdminController@home');
+Route::get('/admin', 'AdminController@home');
 Route::get('/manageloans', 'AdminController@manageloans');
 Route::get('/settings', 'AdminController@settings');
+
+Route::get('/lender', 'LenderController@home');
+Route::get('/createloan', 'LenderController@createloan');
+Route::get('/editloan', 'LenderController@editloan');
