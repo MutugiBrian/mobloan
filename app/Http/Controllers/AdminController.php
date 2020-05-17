@@ -12,7 +12,7 @@ class AdminController extends Controller
     public function home(){
         $data = array(
             'navbar'=>'admin',
-            'pagename'=>'adminhome',
+            'pagename'=>'admin home',
            );
         return view('admin.home')->with($data);
     }

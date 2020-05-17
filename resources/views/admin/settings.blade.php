@@ -9,11 +9,11 @@
 
 
 @section('body')
-<div class="container z-depth-1 mt-4">
+<div class="container z-depth-0 mt-4">
 
 
     <!--Section: Content-->
-    <section class="dark-grey-text p-5">
+    <section class="dark-grey-text pt-5">
 
         <!-- Grid row -->
         <div class="row">
@@ -42,7 +42,7 @@
                         system.</p>
 
                     <!-- Material form contact -->
-                    <div class="card z-depth-0">
+                    <div class="card">
                         <!--Card content-->
                         <div class="card-body px-lg-5 pt-0">
 
@@ -91,7 +91,7 @@
                                 <!-- Send button -->
                                 <div class="text-right">
                                     <button class="btn btn-primary btn-rounded btn-md ml-md-0 my-4 waves-effect"
-                                        type="submit">Update</button>
+                                        type="submit"><i class="fas fa-check mr-1"></i> Update</button>
                                 </div>
 
                             </form>
@@ -120,11 +120,11 @@
 </div>
 
 
-<div class="container z-depth-1 mt-5">
+<div class="container mt-5">
 
 
     <!--Section: Content-->
-    <section>
+    <section class="dark-grey-text">
 
         <!-- Grid row -->
         <div class="row">
@@ -141,7 +141,7 @@
                     <p class="text-muted mb-4 pb-2">Add new loan type</p>
 
                     <!-- Material form contact -->
-                    <div class="card z-depth-0">
+                    <div class="card">
                         <!--Card content-->
                         <div class="card-body px-lg-5 pt-0">
 
@@ -162,7 +162,7 @@
                                 <!-- Send button -->
                                 <div class="text-right">
                                     <button class="btn btn-primary btn-rounded btn-md ml-md-0 my-4 waves-effect"
-                                        type="submit">Add loan type</button>
+                                        type="submit"><i class="fas fa-plus mr-1"></i> Add loan type</button>
                                 </div>
 
                             </form>

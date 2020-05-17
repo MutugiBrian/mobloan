@@ -51,9 +51,11 @@
                                 At MobLoan, we give you a list of lenders who offer the loan matching your needs, then
                                 you compare and choose to borrow from the lender who you find having the most appealing
                                 plan.</p>
-                            <a href="/loans" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0">COMPARE
+                            <a href="/loans" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
+                                    class="fas fa-clone left"></i> COMPARE
                                 LOANS</a>
-                            <a href="/register" type="button" class="btn btn-outline-grey btn-rounded btn-md">OFFER
+                            <a href="/register" type="button" class="btn btn-outline-grey btn-rounded btn-md"><i
+                                    class="fas fa-briefcase mr-1"></i> OFFER
                                 LOANS</a>
                         </div>
                         <!--Grid column-->
