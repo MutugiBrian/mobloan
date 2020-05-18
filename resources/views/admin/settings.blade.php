@@ -131,43 +131,54 @@
             <!-- Grid column -->
             <div class="col-lg-7 mb-4 align-self-center text-center text-lg-left">
 
-                <!-- Form -->
-                <form class="" action="">
+                <!-- Section heading -->
+                <h3 class="font-weight-bold my-3">Loan Types</h3>
 
-                    <!-- Section heading -->
-                    <h3 class="font-weight-bold my-3">Loan Types</h3>
+                <p class="text-muted mb-4 pb-2">Add new loan type</p>
 
-                    <p class="text-muted mb-4 pb-2">Add new loan type</p>
+                <!-- Material form contact -->
+                <div class="card">
+                    <!--Card content-->
+                    <div class="card-body px-lg-5 pt-0">
 
-                    <!-- Material form contact -->
-                    <div class="card">
-                        <!--Card content-->
-                        <div class="card-body px-lg-5 pt-0">
+                        <!-- Form -->
+                        <form class="text-center" style="color: #757575;" action="/createloantype" method="POST"
+                            enctype="multipart/form-data">
 
-                            <!-- Form -->
-                            <form class="text-center" style="color: #757575;" action="#!">
-
-                                <!-- Name -->
-                                <div class="md-form mt-3">
-                                    <input type="text" id="materialContactFormName" class="form-control">
-                                    <label for="materialContactFormName">Loan Type Name</label>
+                            <!-- Name -->
+                            <div class="md-form mt-3">
+                                <input type="text" id="ln" name="name" class="form-control">
+                                <label for="ln">Loan Type Name</label>
+                            </div>
+                            <div class="md-form">
+                                <input type="text" id="ld" name="description" class="form-control">
+                                <label for="ld">Loan Type Description</label>
+                            </div>
+                            <div class="md-form">
+                                <div class="file-field">
+                                    <div class="btn btn-outline-primary btn-rounded waves-effect btn-sm float-left">
+                                        <span>Choose file</span>
+                                        <input type="file" name="imageurl">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" placeholder="Upload cover image"
+                                            disabled>
+                                    </div>
                                 </div>
-                                <div class="md-form">
-                                    <textarea id="materialContactFormMessage" class="form-control md-textarea"
-                                        rows="3"></textarea>
-                                    <label for="materialContactFormMessage">Loan Type Description</label>
-                                </div>
+                            </div>
 
-                                <!-- Send button -->
-                                <div class="text-right">
-                                    <button class="btn btn-primary btn-rounded btn-md ml-md-0 my-4 waves-effect"
-                                        type="submit"><i class="fas fa-plus mr-1"></i> Add loan type</button>
-                                </div>
+                            @csrf
 
-                            </form>
-                            <!-- Form -->
-                        </div>
+                            <!-- Send button -->
+                            <div class="text-right">
+                                <button class="btn btn-primary btn-rounded btn-md ml-md-0 my-4 waves-effect"
+                                    type="submit"><i class="fas fa-plus mr-1"></i> Add loan type</button>
+                            </div>
+
+                        </form>
+                        <!-- Form -->
                     </div>
+                </div>
 
             </div>
             <!-- Grid column -->
@@ -190,6 +201,92 @@
         </div>
         <!-- Grid row -->
 
+        @if(count($loan_types) > 0)
+        @foreach($loan_types as $type)
+
+
+        <form class="text-center mx-3 px-3 needs-validation" style="color: #757575;" action="/updateloantype"
+            method="POST" enctype="multipart/form-data" novalidate>
+
+            <div class="row">
+
+                <div class="col-sm-10">
+
+
+                    <div class="row justify-content-center">
+
+                        <div class="col">
+                            <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+                                <label for="validationCustom04">Name</label>
+                            </small>
+                            <input type="text" class="form-control nb" name="name" placeholder=""
+                                value="{{$type->name}}" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid name.
+                            </div>
+                        </div>
+                        <div class="col">
+                            <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+                                <label for="validationCustom04">Description</label>
+                            </small>
+                            <input type="text" name="description" class="form-control nb" id="validationCustom04"
+                                placeholder="" value="{{$type->description}}" required>
+                            <div class="invalid-feedback">
+                                Please provide a description
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="my-2">
+                                <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+                                    <label for="validationCustom04">Cover Image - {{$type->image}}</label>
+                                </small>
+                                <input type="file" name="imageurl" id=" validationCustom04"
+                                    accept="image/x-png,image/jpeg" placeholder="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    @csrf
+                    <input type="hidden" name="id" value="{{$type->id}}" required>
+
+
+
+                </div>
+                <div class="col-sm-2 mt-sm-4 " style="padding-top:10px;">
+
+                    <div class="row py-0">
+                        <button type="submit" class="col transparentbutton" style="border: none !important;">
+                            <i class="far fa-save text-primary"></i>
+                        </button>
+
+                        <a href="#" onclick="deletetype({{$type->id}})" class="col transparentbutton">
+                            <i class="far fa-trash-alt text-danger"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+
+
+
+
+
+
+        @endforeach
+        @else
+        <div class="my-2 z-depth-1">
+            <section class="text-center dark-grey-text">
+                <p class="text-muted"><i class="fas fa-exclamation-triangle mr-1 text-danger my-2"></i> No Loantypes
+                    created
+                </p>
+            </section>
+        </div>
+        @endif
+
+
     </section>
     <!--Section: Content-->
 
@@ -200,5 +297,15 @@
 
 @section('pagescripts')
 <script type="text/javascript">
+function deletetype(id) {
+    $.ajax({
+        url: '/deletetype/' + id,
+        type: "POST",
+        data: []
+    }).done(function(response) { //
+
+        window.location.reload();
+    });
+}
 </script>
 @endsection

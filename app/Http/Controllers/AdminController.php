@@ -4,11 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\SiteSetting;
+use App\LoanType;
+
 
 class AdminController extends Controller
 {
     //
 
+    public function storeimage($file){
+
+        if($file == null){
+            return null;
+        }else{
+
+        $filefullname = $file->getClientOriginalName();
+        $filename = pathinfo($filefullname, PATHINFO_FILENAME);
+        $extension = $file->getClientOriginalExtension();
+        $storename = $filename.'_'.time().'.'.$extension;
+        //upload image
+        $path = $file->storeAs('public/images',$storename);
+        
+        return $storename;
+        }
+        
+    }
     
     public function home(){
         $data = array(
@@ -30,6 +49,7 @@ class AdminController extends Controller
         $data = array(
             'navbar'=>'admin',
             'pagename'=>'settings',
+            'loan_types'=>LoanType::where('deleted',FALSE)->get()
            );
         return view('admin.settings')->with($data);
     }
@@ -59,6 +79,58 @@ class AdminController extends Controller
         }
     }
 
+    public function createloantype(request $form){
+        $this->validation($form, 'loantype');
+        $loantype = $form->toArray();
+
+        if($form->file('imageurl') !== null && $form->file('imageurl')->getClientOriginalName() !== ''){
+            $loantype['image'] = $this->storeimage($form->file('imageurl'));
+            unset($loantype['imageurl']);
+            
+        }else{
+            unset($loantype['imageurl']);
+        }
+
+            if(LoanType::create($loantype)){
+            return back()->with('success', 'Loan Type Created Successfully');
+            }else{
+                return back()->with('error', 'Error creating loan type');  
+            }
+    }
+
+    public function updateloantype(request $form){
+        $this->validation($form, 'update_loantype');
+        $loantype = $form->toArray();
+        $id = $loantype['id']; 
+        unset($loantype['id']);
+        unset($loantype['_token']);
+
+        if($form->file('imageurl') !== null && $form->file('imageurl')->getClientOriginalName() !== ''){
+            $loantype['image'] = $this->storeimage($form->file('imageurl'));
+            unset($loantype['imageurl']);
+            
+        }else{
+            unset($loantype['imageurl']);
+        }
+
+            if(LoanType::where('id', $id)->update($loantype)){
+            return back()->with('success', 'Loan Type updated Successfully');
+            }else{
+                return back()->with('error', 'Error updating loan type');  
+            }
+    }
+
+    public function deleteloantype($id){
+
+        if(LoanType::where('id', $id)->update([
+            'deleted'=>TRUE
+        ])){
+            return back()->with('success', 'Industry Deleted');
+        }else{
+            return back()->with('error', 'Error Deleting');  
+        }
+    }
+
     public function validation($form, $type)
     {
         if ($type == 'settings') {
@@ -67,6 +139,21 @@ class AdminController extends Controller
                 'sitename' => 'required|max:255',
                 'adminemail' => 'required|max:255',
                 'terms' => 'required'
+            ]);
+        }
+
+        if ($type == 'loantype') {
+            return $this->validate($form, [
+                'name' => 'required|max:255',
+                'imageurl' => 'required',
+                'description' => 'required|max:255',
+            ]);
+        }
+
+        if ($type == 'update_loantype') {
+            return $this->validate($form, [
+                'name' => 'required|max:255',
+                'description' => 'required|max:255',
             ]);
         }
     }

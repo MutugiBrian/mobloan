@@ -181,6 +181,11 @@
         <script src="{{ asset('others/dataTables.checkboxes.min.js') }}"></script>
         <script type="text/javascript">
         $(document).ready(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                }
+            });
             $('.mdb-select').materialSelect();
         });
         </script>
