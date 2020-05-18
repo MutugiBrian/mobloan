@@ -25,6 +25,8 @@ Route::get('/login', 'PagesController@login');
 Route::get('/compare', 'PagesController@compare');
 
 
+Route::post('/settings', 'AdminController@updatesettings');
+
 Route::get('/admin', 'AdminController@home');
 Route::get('/manageloans', 'AdminController@manageloans');
 Route::get('/settings', 'AdminController@settings');

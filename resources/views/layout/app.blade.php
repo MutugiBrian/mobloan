@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>{{config('app.name')}} - {{$title ?? 'loan comparator'}}</title>
+        <title>{{$site->sitename ?? config('app.name')}} - {{$title ?? 'loan comparator'}}</title>
         <!-- MDB icon -->
         <link rel="icon" href="{{ asset('mdb/img/favicon.ico') }}" type="image/x-icon" />
         <!-- Font Awesome -->
@@ -79,7 +79,7 @@
 
         @if(isset($navbar) && $navbar == 'admin')
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bga blue-gradient z-depth-0">
-            <a class="navbar-brand" href="/admin"><strong>{{config('app.name')}}</strong></a>
+            <a class="navbar-brand" href="/admin"><strong>{{$site->sitename ?? config('app.name')}}</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -119,7 +119,7 @@
         @endif
          z-depth-0 ">
             <div class="container mx-0" style="width:100% !important;max-width: 1840px !important;">
-                <a class="navbar-brand" href="/"><strong>{{config('app.name')}}</strong></a>
+                <a class="navbar-brand" href="/"><strong>{{$site->sitename ?? config('app.name')}}</strong></a>
                 @if(isset($pagename))
                 <div class="mr-1 
                 @if(isset($navbar) && $navbar == 'transparent')
@@ -147,6 +147,7 @@
     <body>
 
         <main class="vc cloudy-knoxville-gradient py-5">
+            @include('messages')
             @yield('body')
         </main>
         @if(isset($navbar) && $navbar == 'transparent')
@@ -154,7 +155,7 @@
         <footer class="page-footer text-center font-small mt-0 bga blue-gradient">
             <div class="footer-copyright py-3">
                 © 2020 Copyright:
-                <a href="#"> {{config('app.name')}} </a>
+                <a href="#"> {{$site->sitename ?? config('app.name')}} </a>
             </div>
         </footer>
 
