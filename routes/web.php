@@ -19,8 +19,13 @@ Route::get('/', function () {
 });
 
 
+Route::post('/register', 'PagesController@postregister');
+Route::post('/login', 'PagesController@postlogin');
+
+Route::get('/verify/{link}', 'PagesController@verify');
 Route::get('/loans', 'PagesController@loans');
 Route::get('/register', 'PagesController@register');
+Route::get('/register/success/{email}', 'PagesController@registersuccess');
 Route::get('/login', 'PagesController@login');
 Route::get('/compare', 'PagesController@compare');
 

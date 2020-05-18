@@ -15,12 +15,20 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->enum('role',['admin','lender'])->default('lender');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('logo');
+            $table->text('address');
+            $table->text('phone');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->timestamps();
+            $table->text('verification_code');
+            $table->boolean('verified')->default(false);
+            $table->boolean('deleted')->default(false);
+            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 
