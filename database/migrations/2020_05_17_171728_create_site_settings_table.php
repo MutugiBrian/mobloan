@@ -15,6 +15,7 @@ class CreateSiteSettingsTable extends Migration
     {
         Schema::create('site_settings', function (Blueprint $table) {
             $table->id();
+            $table->enum('status',['active','not_active'])->default('not_active');
             $table->text('sitename');
             $table->text('adminemail');
             $table->longtext('terms');

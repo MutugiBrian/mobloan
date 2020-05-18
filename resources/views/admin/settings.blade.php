@@ -31,36 +31,37 @@
 
             <!-- Grid column -->
             <div class="col-md-7 mb-lg-0 mb-4">
+                <!-- Section heading -->
+                <h3 class="font-weight-bold my-3">System Settings</h3>
 
-                <!-- Form -->
-                <form class="" action="">
+                <p class="text-muted mb-4 pb-2">Basic site configurations, changes made here affect the entire
+                    system.</p>
 
-                    <!-- Section heading -->
-                    <h3 class="font-weight-bold my-3">System Settings</h3>
+                <!-- Material form contact -->
+                <div class="card">
+                    <!--Card content-->
+                    <div class="card-body px-lg-5 pt-0">
 
-                    <p class="text-muted mb-4 pb-2">Basic site configurations, changes made here affect the entire
-                        system.</p>
+                        <!-- Form -->
+                        <form id="settingsform" class="text-center" style="color: #757575;" action="/settings"
+                            method="POST">
 
-                    <!-- Material form contact -->
-                    <div class="card">
-                        <!--Card content-->
-                        <div class="card-body px-lg-5 pt-0">
+                            <!-- Name -->
+                            <div class="md-form mt-3">
+                                <input type="text" id="materialContactFormName" name="sitename"
+                                    value="{{$site->sitename ?? ''}}" class="form-control">
+                                <label for="materialContactFormName">Site Name</label>
+                            </div>
 
-                            <!-- Form -->
-                            <form class="text-center" style="color: #757575;" action="#!">
+                            <!-- E-mail -->
+                            <div class="md-form">
+                                <input type="email" name="adminemail" value="{{$site->adminemail ?? ''}}"
+                                    id="materialContactFormEmail" class="form-control">
+                                <label for="materialContactFormEmail">Admin E-mail</label>
+                            </div>
 
-                                <!-- Name -->
-                                <div class="md-form mt-3">
-                                    <input type="text" id="materialContactFormName" class="form-control">
-                                    <label for="materialContactFormName">Site Name</label>
-                                </div>
-
-                                <!-- E-mail -->
-                                <div class="md-form">
-                                    <input type="email" id="materialContactFormEmail" class="form-control">
-                                    <label for="materialContactFormEmail">Admin E-mail</label>
-                                </div>
-                                <div class="row">
+                            @csrf
+                            <!-- <div class="row">
                                     <div class="col-sm-4">
                                         <div class="md-form mt-3">
                                             <input type="text" id="materialContactFormNamem" class="form-control">
@@ -81,31 +82,29 @@
                                             <label for="materialContactFormNameo">Other Color</label>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="md-form">
-                                    <textarea id="materialContactFormMessage" class="form-control md-textarea"
-                                        rows="3"></textarea>
-                                    <label for="materialContactFormMessage">Terms and policy</label>
-                                </div>
+                                </div> -->
+                            <div class="md-form">
+                                <textarea id="materialContactFormMessage" name="terms" class="form-control md-textarea"
+                                    value="" rows="3">{{$site->terms ?? ''}}</textarea>
+                                <label for="materialContactFormMessage">Terms and policy</label>
+                            </div>
 
-                                <!-- Send button -->
-                                <div class="text-right">
-                                    <button class="btn btn-primary btn-rounded btn-md ml-md-0 my-4 waves-effect"
-                                        type="submit"><i class="fas fa-check mr-1"></i> Update</button>
-                                </div>
+                            <!-- Send button -->
+                            <div class="text-right">
+                                <button class="btn btn-primary btn-rounded btn-md ml-md-0 my-4 waves-effect"
+                                    type="submit"><i class="fas fa-check mr-1"></i> Update</button>
+                            </div>
 
-                            </form>
-                            <!-- Form -->
-
-                        </div>
+                        </form>
+                        <!-- Form -->
 
                     </div>
-                    <!-- Material form contact -->
-                    <!-- <small class="form-text black-text"><strong>* Leave your email addres to be notified
+
+                </div>
+                <!-- Material form contact -->
+                <!-- <small class="form-text black-text"><strong>* Leave your email addres to be notified
                             first.</strong></small> -->
 
-                </form>
-                <!-- Form -->
 
             </div>
             <!-- Grid column -->
