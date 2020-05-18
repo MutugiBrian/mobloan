@@ -23,20 +23,20 @@
 
                         <!-- Form -->
                         <form class="text-center mx-3 px-3 needs-validation" style="color: #757575;"
-                            action="{{ URL::to('/user/login') }}" method="POST" novalidate>
+                            action="{{ URL::to('/login') }}" method="POST" novalidate>
 
                             <div class="my-4">
                                 <div class="md-form">
-                                    <input type="email" id="materialLoginFormEmail" class="form-control">
-                                    <label for="materialLoginFormEmail">E-mail</label>
+                                    <input type="email" id="email" name="email" class="form-control">
+                                    <label for="email">E-mail</label>
                                 </div>
                             </div>
 
                             <!-- Email -->
                             <div class="my-4">
                                 <div class="md-form">
-                                    <input type="password" id="materialLoginFormPassword" class="form-control">
-                                    <label for="materialLoginFormPassword">Password</label>
+                                    <input type="password" id="password" name="password" class="form-control">
+                                    <label for="password">Password</label>
                                 </div>
                             </div>
 

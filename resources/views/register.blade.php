@@ -19,21 +19,22 @@
             <div class="card-body px-lg-5 pt-0">
 
                 <!-- Form -->
-                <form class="text-center" style="color: #757575;" action="#!">
+                <form class="text-center" style="color: #757575;" action="/register" method="POST"
+                    enctype="multipart/form-data">
 
                     <div class="form-row">
                         <div class="col-sm-6">
                             <!-- First name -->
                             <div class="md-form">
-                                <input type="text" id="materialRegisterFormFirstName" class="form-control">
-                                <label for="materialRegisterFormFirstName">Lender name</label>
+                                <input type="text" id="name" name="name" class="form-control">
+                                <label for="name">Lender name</label>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <!-- Last name -->
                             <div class="md-form">
-                                <input type="email" id="materialRegisterFormLastName" class="form-control">
-                                <label for="materialRegisterFormLastName">Lender email</label>
+                                <input type="email" id="email" name="email" class="form-control">
+                                <label for="email">Lender email</label>
                             </div>
                         </div>
                     </div>
@@ -44,10 +45,11 @@
                                 <div class="file-field">
                                     <div class="btn btn-outline-primary btn-rounded waves-effect btn-sm float-left">
                                         <span>Choose file</span>
-                                        <input type="file">
+                                        <input type="file" name="imageurl">
                                     </div>
                                     <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text" placeholder="Upload logo">
+                                        <input class="file-path validate" type="text" placeholder="Upload logo"
+                                            disabled>
                                     </div>
                                 </div>
                             </div>
@@ -55,8 +57,8 @@
                         <div class="col-sm-6">
                             <!-- Last name -->
                             <div class="md-form">
-                                <input type="text" id="materialRegisterFormLastName" class="form-control">
-                                <label for="materialRegisterFormLastName">Address</label>
+                                <input type="text" id="address" name="address" class="form-control">
+                                <label for="address">Address</label>
                             </div>
                         </div>
                     </div>
@@ -64,26 +66,27 @@
 
                     <!-- E-mail -->
                     <div class="md-form mb-2">
-                        <input type="text" id="materialRegisterFormEmail" class="form-control">
-                        <label for="materialRegisterFormEmail">Phone number</label>
+                        <input type="text" id="phone" name="phone" class="form-control">
+                        <label for="phone">Phone number</label>
                     </div>
 
                     <!-- Password -->
                     <div class="md-form">
-                        <input type="password" id="materialRegisterFormPassword" class="form-control"
+                        <input type="password" id="password" name="password" class="form-control"
                             aria-describedby="materialRegisterFormPasswordHelpBlock">
-                        <label for="materialRegisterFormPassword">Password</label>
+                        <label for="password">Password</label>
                         <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted">
                             At least 8 characters and 1 digit
                         </small>
                     </div>
+                    @csrf
 
 
                     <!-- Password -->
                     <div class="md-form">
-                        <input type="password" id="materialRegisterFormPassword" class="form-control"
-                            aria-describedby="materialRegisterFormPasswordHelpBlock">
-                        <label for="materialRegisterFormPassword">Confirm Password</label>
+                        <input type="password" id="password_confirmation" name="password_confirmation"
+                            class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
+                        <label for="password_confirmation">Confirm Password</label>
                         <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted">
                             Must match password
                         </small>
@@ -135,16 +138,7 @@
             <div class="modal-body">
                 <div class="row d-flex justify-content-center align-items-center">
 
-                    <p class="p-2">We use cookies to improve your website experienceWe use cookies to improve your
-                        website experienceWe use cookies to improve your website experienceWe use cookies to improve
-                        your website experienceWe use cookies to improve your website experienceWe use cookies to
-                        improve your website experienceWe use cookies to improve your website experienceWe use cookies
-                        to improve your website experienceWe use cookies to improve your website experienceWe use
-                        cookies to improve your website experienceWe use cookies to improve your website experienceWe
-                        use cookies to improve your website experienceWe use cookies to improve your website
-                        experienceWe use cookies to improve your website experienceWe use cookies to improve your
-                        website experienceWe use cookies to improve your website experienceWe use cookies to improve
-                        your website experienceWe use cookies to improve your website experience</p>
+                    <p class="p-2">{{$site->terms ?? ''}}</p>
 
                     <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Ok, thanks</a>
                 </div>
