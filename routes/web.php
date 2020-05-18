@@ -26,10 +26,14 @@ Route::get('/compare', 'PagesController@compare');
 
 
 Route::post('/settings', 'AdminController@updatesettings');
+Route::post('/createloantype', 'AdminController@createloantype');
+Route::post('/updateloantype', 'AdminController@updateloantype');
+Route::post('/deletetype/{id}', 'AdminController@deleteloantype');
 
 Route::get('/admin', 'AdminController@home');
 Route::get('/manageloans', 'AdminController@manageloans');
 Route::get('/settings', 'AdminController@settings');
+
 
 Route::get('/lender', 'LenderController@home');
 Route::get('/createloan', 'LenderController@createloan');
