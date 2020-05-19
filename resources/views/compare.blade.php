@@ -56,7 +56,9 @@
 
         <!--Accordion wrapper-->
         <div class="accordion md-accordion accordion-2" id="accordionEx7" role="tablist" aria-multiselectable="true">
-
+            <?php $i = 0; ?>
+            @if(count($loans) > 1)
+            @foreach($loans as $loan)
             <!-- Accordion card -->
             <div class="card z-depth-1 rgba-stylish-strong border-primary borderc mb-3 mx-0 p-2">
 
@@ -64,7 +66,7 @@
                 <div class="card-header mb-1" role="tab" id="heading1">
                     <div class="row">
                         <div class="col-md-2">
-                            <img src="https://simpauldesign.com/wp-content/uploads/2019/10/equity-bank-new-logo.png"
+                            <img src="/storage/images/{{$loan->lender_logo}}"
                                 style="width:100% !important;height:20vh !important;" alt="">
                         </div>
                         <div class="col row py-md-3  mt-1 mx-0 px-0 mt-md-0">
@@ -76,7 +78,7 @@
                                             Interest
                                         </div>
                                         <div class="col-6 col-md-12 text-dark font-weight-bold">
-                                            5%
+                                            {{$loan->interest}}
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-3 row text-md-center">
@@ -84,7 +86,11 @@
                                             Admin Fee
                                         </div>
                                         <div class="col-6 col-md-12 text-dark font-weight-bold">
+                                            @if($loan->admin_fee)
                                             YES
+                                            @else
+                                            NO
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-3 row text-md-center">
@@ -92,7 +98,7 @@
                                             Minimum
                                         </div>
                                         <div class="col-6 col-md-12 text-dark font-weight-bold">
-                                            KES10,500.00
+                                            KES {{$loan->minimum_amount}}
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-3 row text-md-center">
@@ -100,13 +106,13 @@
                                             Maximum
                                         </div>
                                         <div class="col-6 col-md-12 text-dark font-weight-bold">
-                                            KES200,500.00
+                                            KES {{$loan->maximum_amount}}
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-3 text-center my-2 my-md-0">
-                                    <a href="/compare" type="button"
+                                    <a target="_blank" href="{{$loan->application_link}}" type="button"
                                         class="btn btn-primary btn-rounded btn-md ml-md-0 z-depth-1 mx-2"
                                         style="width:90%;"><i class="fas fa-pen-alt"></i> Apply Now</a>
                                 </div>
@@ -122,8 +128,11 @@
                 </div>
 
                 <!-- Card body -->
-                <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1"
-                    data-parent="#accordionEx7">
+                <div id="collapse1" class="collapse 
+                @if($i == 0)
+                show
+                @endif
+                " role="tabpanel" aria-labelledby="heading1" data-parent="#accordionEx7">
                     <div class="card-body mb-1">
                         <div class="row">
                             <div class="col-md-6 my-2">
@@ -131,7 +140,11 @@
                                     Salaried
                                 </div>
                                 <div class="col-12 text-dark">
+                                    @if($loan->salaried)
                                     Required
+                                    @else
+                                    Not Required
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-6 my-2">
@@ -139,7 +152,7 @@
                                     Salaried Duration
                                 </div>
                                 <div class="col-12 text-dark">
-                                    2 Years
+                                    {{$loan->salaried_duration}}
                                 </div>
                             </div>
                             <div class="col-md-6 my-2">
@@ -147,7 +160,11 @@
                                     Security
                                 </div>
                                 <div class="col-12 text-dark">
+                                    @if($loan->security)
                                     Required
+                                    @else
+                                    Not Required
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-6 my-2">
@@ -155,7 +172,7 @@
                                     Security Type
                                 </div>
                                 <div class="col-12 text-dark">
-                                    Property
+                                    {{$loan->security_type}}
                                 </div>
                             </div>
                             <div class="col-md-6 my-2">
@@ -163,7 +180,7 @@
                                     Minimum Duration
                                 </div>
                                 <div class="col-12 text-dark">
-                                    12 Months
+                                    {{$loan->minimum_duration}}
                                 </div>
                             </div>
                             <div class="col-md-6 my-2">
@@ -171,7 +188,7 @@
                                     Maximum Duration
                                 </div>
                                 <div class="col-12 text-dark">
-                                    5 Years
+                                    {{$loan->maximum_duration}}
                                 </div>
                             </div>
                         </div>
@@ -179,253 +196,19 @@
                 </div>
             </div>
             <!-- Accordion card -->
-
-            <!-- Accordion card -->
-            <div class="card z-depth-1 rgba-stylish-strong border-primary borderc mb-3 mx-0 p-2">
-
-                <!-- Card header -->
-                <div class="card-header mb-1" role="tab" id="heading1">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img src="https://simpauldesign.com/wp-content/uploads/2019/10/equity-bank-new-logo.png"
-                                style="width:100% !important;height:20vh !important;" alt="">
-                        </div>
-                        <div class="col row py-md-3  mt-1 mx-0 px-0 mt-md-0">
-
-                            <div class="col-12 mx-0 px-0  row">
-                                <div class="col row mx-0 px-0">
-                                    <div class="col-12 col-md-3 row text-md-center">
-                                        <div class="col-6 col-md-12 text-muted">
-                                            Interest
-                                        </div>
-                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
-                                            5%
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3 row text-md-center">
-                                        <div class="col-6 col-md-12 text-muted">
-                                            Admin Fee
-                                        </div>
-                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
-                                            YES
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3 row text-md-center">
-                                        <div class="col-6 col-md-12 text-muted">
-                                            Minimum
-                                        </div>
-                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
-                                            KES10,500.00
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3 row text-md-center">
-                                        <div class="col-6 col-md-12 text-muted">
-                                            Maximum
-                                        </div>
-                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
-                                            KES200,500.00
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3 text-center my-2 my-md-0">
-                                    <a href="/compare" type="button"
-                                        class="btn btn-primary btn-rounded btn-md ml-md-0 z-depth-1 mx-2"
-                                        style="width:90%;"><i class="fas fa-pen-alt"></i> Apply Now</a>
-                                </div>
-                            </div>
-                            <a class="col-12 my-2 text-center" data-toggle="collapse" data-parent="#accordionEx7"
-                                href="#collapse12" aria-expanded="true" aria-controls="collapse12">
-                                More details
-                            </a>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Card body -->
-                <div id="collapse12" class="collapse" role="tabpanel" aria-labelledby="heading12"
-                    data-parent="#accordionEx7">
-                    <div class="card-body mb-1">
-                        <div class="row">
-                            <div class="col-md-6 my-2">
-                                <div class="col-12 font-weight-bold colorb">
-                                    Salaried
-                                </div>
-                                <div class="col-12 text-dark">
-                                    Required
-                                </div>
-                            </div>
-                            <div class="col-md-6 my-2">
-                                <div class="col-12 font-weight-bold colorb">
-                                    Salaried Duration
-                                </div>
-                                <div class="col-12 text-dark">
-                                    2 Years
-                                </div>
-                            </div>
-                            <div class="col-md-6 my-2">
-                                <div class="col-12 font-weight-bold colorb">
-                                    Security
-                                </div>
-                                <div class="col-12 text-dark">
-                                    Required
-                                </div>
-                            </div>
-                            <div class="col-md-6 my-2">
-                                <div class="col-12 font-weight-bold colorb">
-                                    Security Type
-                                </div>
-                                <div class="col-12 text-dark">
-                                    Property
-                                </div>
-                            </div>
-                            <div class="col-md-6 my-2">
-                                <div class="col-12 font-weight-bold colorb">
-                                    Minimum Duration
-                                </div>
-                                <div class="col-12 text-dark">
-                                    12 Months
-                                </div>
-                            </div>
-                            <div class="col-md-6 my-2">
-                                <div class="col-12 font-weight-bold colorb">
-                                    Maximum Duration
-                                </div>
-                                <div class="col-12 text-dark">
-                                    5 Years
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <?php $i++; ?>
+            @endforeach
+            @else
+            <div class="my-2 z-depth-1">
+                <section class="text-center dark-grey-text">
+                    <p class="text-muted"><i class="fas fa-exclamation-triangle mr-1 text-danger my-5 py-5"></i> No
+                        Loans in
+                        this
+                        category yet.
+                    </p>
+                </section>
             </div>
-            <!-- Accordion card -->
-
-
-            <!-- Accordion card -->
-            <div class="card z-depth-1 rgba-stylish-strong border-primary borderc mb-3 mx-0 p-2">
-
-                <!-- Card header -->
-                <div class="card-header mb-1" role="tab" id="heading13">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img src="https://simpauldesign.com/wp-content/uploads/2019/10/equity-bank-new-logo.png"
-                                style="width:100% !important;height:20vh !important;" alt="">
-                        </div>
-                        <div class="col row py-md-3  mt-1 mx-0 px-0 mt-md-0">
-
-                            <div class="col-12 mx-0 px-0  row">
-                                <div class="col row mx-0 px-0">
-                                    <div class="col-12 col-md-3 row text-md-center">
-                                        <div class="col-6 col-md-12 text-muted">
-                                            Interest
-                                        </div>
-                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
-                                            5%
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3 row text-md-center">
-                                        <div class="col-6 col-md-12 text-muted">
-                                            Admin Fee
-                                        </div>
-                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
-                                            YES
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3 row text-md-center">
-                                        <div class="col-6 col-md-12 text-muted">
-                                            Minimum
-                                        </div>
-                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
-                                            KES10,500.00
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3 row text-md-center">
-                                        <div class="col-6 col-md-12 text-muted">
-                                            Maximum
-                                        </div>
-                                        <div class="col-6 col-md-12 text-dark font-weight-bold">
-                                            KES200,500.00
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3 text-center my-2 my-md-0">
-                                    <a href="/compare" type="button"
-                                        class="btn btn-primary btn-rounded btn-md ml-md-0 z-depth-1 mx-2"
-                                        style="width:90%;"><i class="fas fa-pen-alt"></i> Apply Now</a>
-                                </div>
-                            </div>
-                            <a class="col-12 my-2 text-center" data-toggle="collapse" data-parent="#accordionEx7"
-                                href="#collapse13" aria-expanded="true" aria-controls="collapse13">
-                                More details
-                            </a>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Card body -->
-                <div id="collapse13" class="collapse" role="tabpanel" aria-labelledby="heading13"
-                    data-parent="#accordionEx7">
-                    <div class="card-body mb-1">
-                        <div class="row">
-                            <div class="col-md-6 my-2">
-                                <div class="col-12 font-weight-bold colorb">
-                                    Salaried
-                                </div>
-                                <div class="col-12 text-dark">
-                                    Required
-                                </div>
-                            </div>
-                            <div class="col-md-6 my-2">
-                                <div class="col-12 font-weight-bold colorb">
-                                    Salaried Duration
-                                </div>
-                                <div class="col-12 text-dark">
-                                    2 Years
-                                </div>
-                            </div>
-                            <div class="col-md-6 my-2">
-                                <div class="col-12 font-weight-bold colorb">
-                                    Security
-                                </div>
-                                <div class="col-12 text-dark">
-                                    Required
-                                </div>
-                            </div>
-                            <div class="col-md-6 my-2">
-                                <div class="col-12 font-weight-bold colorb">
-                                    Security Type
-                                </div>
-                                <div class="col-12 text-dark">
-                                    Property
-                                </div>
-                            </div>
-                            <div class="col-md-6 my-2">
-                                <div class="col-12 font-weight-bold colorb">
-                                    Minimum Duration
-                                </div>
-                                <div class="col-12 text-dark">
-                                    12 Months
-                                </div>
-                            </div>
-                            <div class="col-md-6 my-2">
-                                <div class="col-12 font-weight-bold colorb">
-                                    Maximum Duration
-                                </div>
-                                <div class="col-12 text-dark">
-                                    5 Years
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Accordion card -->
+            @endif
 
         </div>
         <!--/.Accordion wrapper-->

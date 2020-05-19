@@ -26,7 +26,7 @@ Route::get('/loans', 'PagesController@loans');
 Route::get('/register', 'PagesController@register');
 Route::get('/register/success/{email}', 'PagesController@registersuccess');
 Route::get('/login', 'PagesController@login');
-Route::get('/compare', 'PagesController@compare');
+Route::get('/compare/{id}', 'PagesController@compare');
 
 
 Route::post('/settings', 'AdminController@updatesettings');
