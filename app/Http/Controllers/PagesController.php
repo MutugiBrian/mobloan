@@ -210,7 +210,7 @@ class PagesController extends Controller
     public function loans(){
         $loan_types = LoanType::where('deleted',FALSE)->get();
         foreach ($loan_types as $loan_type) {
-            $loan_type->loans = Loan::where('loan_type',$loan_type->id)->count();
+            $loan_type->loans = Loan::where('loan_type',$loan_type->id)->where('deleted',FALSE)->count();
         }
         $data = array(
             'navbar'=>'transparent',

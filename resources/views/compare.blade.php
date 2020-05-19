@@ -57,7 +57,7 @@
         <!--Accordion wrapper-->
         <div class="accordion md-accordion accordion-2" id="accordionEx7" role="tablist" aria-multiselectable="true">
             <?php $i = 0; ?>
-            @if(count($loans) > 1)
+            @if(count($loans) > 0)
             @foreach($loans as $loan)
             <!-- Accordion card -->
             <div class="card z-depth-1 rgba-stylish-strong border-primary borderc mb-3 mx-0 p-2">
