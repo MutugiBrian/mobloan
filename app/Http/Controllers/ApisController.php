@@ -10,8 +10,14 @@ use Illuminate\Http\Request;
 class ApisController extends Controller
 {
     public function allloans(){
+        $loans = Loan::where('deleted',FALSE)->get();
+        foreach ($loans as $loan) {
+            $loan->lender_logo = User::where('id',$loan->lender)->value('logo');
+            $loan->lender_name = User::where('id',$loan->lender)->value('name');
+            $loan->loan_type_name = LoanType::where('id',$loan->loan_type)->value('name');
+        }
         $response = [
-            'data' => Loan::get()
+            'data' => $loans
         ];
         return response()->json($response,200);
     }
@@ -28,15 +34,23 @@ class ApisController extends Controller
     }
 
     public function lenders(){
+        $lenders = User::where('role','lender')->where('deleted',FALSE)->get();
+        foreach ($lenders as $lender) {
+            $lender->loans = Loan::where('lender',$lender->id)->count();
+        }
         $response = [
-            'data' => User::where('role','lender')->get()
+            'data' => $lenders
         ];
         return response()->json($response,200);
     }
 
     public function lenderloans($id){
+        $loans = Loan::where('lender',$id)->where('deleted',FALSE)->get();
+        foreach ($loans as $loan) {
+            $loan->loan_type_name = LoanType::where('id',$loan->loan_type)->value('name');
+        }
         $response = [
-            'data' => Loan::where('lender',$id)->get()
+            'data' => $loans
         ];
         return response()->json($response,200);
     }

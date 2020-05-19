@@ -9,113 +9,21 @@
 
 
 @section('body')
-
-<table class="table" id="loanstable">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Type</th>
-            <th scope="col">Lender</th>
-            <th scope="col">Interest</th>
-            <th scope="col">Min</th>
-            <th scope="col">Max</th>
-            <th scope="col">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>5%</td>
-            <td>@mdo</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>5%</td>
-            <td>@fat</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>5%</td>
-            <td>@twitter</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>5%</td>
-            <td>@twitter</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>5%</td>
-            <td>@twitter</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>5%</td>
-            <td>@twitter</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>5%</td>
-            <td>@twitter</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>5%</td>
-            <td>@twitter</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>5%</td>
-            <td>@twitter</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>5%</td>
-            <td>@twitter</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-    </tbody>
-</table>
-
+<div class="h-100" style="min-height:77.5vh !important;">
+    <table class="table" id="loanstable">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Type</th>
+                <th scope="col">Lender</th>
+                <th scope="col">Interest</th>
+                <th scope="col">Min</th>
+                <th scope="col">Max</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+    </table>
+</div>
 @endsection
 
 
@@ -125,7 +33,7 @@ $(document).ready(function() {
 
 
     var table = $('#loanstable').DataTable({
-            'ajax': '{{url("/api/allloans")}}',
+            'ajax': '{{url("/api/loans")}}',
             'select': {
                 'style': 'multi',
                 selector: ':not(:last-child)'
@@ -135,16 +43,22 @@ $(document).ready(function() {
                 [1, 'asc']
             ],
             'columns': [{
-                    data: "first_name",
+                    data: "id",
                 },
                 {
-                    data: "last_name"
+                    data: "loan_type_name"
                 },
                 {
-                    data: "status"
+                    data: "lender_name"
                 },
                 {
-                    data: "company_name"
+                    data: "interest"
+                },
+                {
+                    data: "minimum_amount"
+                },
+                {
+                    data: "maximum_amount"
                 },
                 {
                     data: "id"
@@ -164,18 +78,15 @@ $(document).ready(function() {
     var apply_labels = function() {
         clearpercentages();
 
-        $('#dtMaterialDesignExample').find("td:nth-child(5)").each(function() {
-            console.log(this);
+        $('#loanstable').find("td:nth-child(7)").each(function() {
+
             var id = $(this).children("span").attr("id");
             if (id === '' || id == null) {
                 id = this.innerHTML;
             }
             $(this).html(
                 "<span class='d-none' id='" + id +
-                "'></span><a href='#'" + id +
-                "' type='button' class='d-inline p-2 btn btn-outline-success btn-sm waves-effect mx-0 my-0 px-1 py-1 mr-1 pc' onclick='approveclerk(" +
-                id +
-                ")'>Approve</a><a href='#' type='button' class='d-inline p-2 btn btn-outline-danger btn-sm waves-effect mx-0 my-0 px-1 py-1 ml-1 pc' onclick='deleteuser(" +
+                "'></span><a href='#' type='button' class='d-inline p-2 btn btn-rounded btn-outline-danger btn-sm waves-effect mx-0 my-0 px-1 py-1 ml-1 pc z-depth-0' onclick='deleteloan(" +
                 id +
                 ")'>Delete</a>"
             );
@@ -234,5 +145,16 @@ $(document).ready(function() {
     });
 
 });
+
+function deleteloan(id) {
+    $.ajax({
+        url: '/deleteloan/' + id,
+        type: "POST",
+        data: []
+    }).done(function(response) { //
+        toastr.success('Loan Deleted');
+    });
+    $('#loanstable').DataTable().ajax.reload();
+}
 </script>
 @endsection

@@ -32,10 +32,14 @@ class LenderController extends Controller
         return view('lender.createloan')->with($data);
     }
 
-    public function editloan(){
+    public function editloan($id){
+        $loan = Loan::where('id',$id)->first();
+        
         $data = array(
             'navbar'=>'lender',
             'pagename'=>'edit loan',
+            'loan_types'=>LoanType::where('deleted',FALSE)->get(),
+            'loan'=>$loan
            );
         return view('lender.editloan')->with($data);
     }
@@ -43,15 +47,57 @@ class LenderController extends Controller
     public function postloan(request $form){
         $this->validation($form, 'loan');
         $loan = $form->toArray();
-        $loan['admin_fee'] = $loan['admin_fee'] ? 1 : 0;
-        $loan['salaried'] = $loan['salaried'] ? 1 : 0;
-        $loan['security'] = $loan['security'] ? 1 : 0;
+         if(isset($loan['admin_fee'])){
+            $loan['admin_fee'] = 1;
+        }else{
+            $loan['admin_fee'] = 0;
+        }
+        if(isset($loan['salaried'])){
+            $loan['salaried'] = 1;
+        }else{
+            $loan['salaried'] = 0;
+        }
+        if(isset($loan['security'])){
+            $loan['security'] = 1;
+        }else{
+            $loan['security'] = 0;
+        }
 
             if(Loan::create($loan)){
                return redirect('/lender')->with('success', 'Loan created Successfully');
             }else{
                 return back()->with('error', 'Error creating loan');  
             }
+    }
+
+    public function posteditloan(request $form){
+        $this->validation($form, 'loan');
+        $loan = $form->toArray();
+        $id = $loan['id'];
+        if(isset($loan['admin_fee'])){
+            $loan['admin_fee'] = 1;
+        }else{
+            $loan['admin_fee'] = 0;
+        }
+        if(isset($loan['salaried'])){
+            $loan['salaried'] = 1;
+        }else{
+            $loan['salaried'] = 0;
+        }
+        if(isset($loan['security'])){
+            $loan['security'] = 1;
+        }else{
+            $loan['security'] = 0;
+        }
+        unset($loan['_token']);
+        unset($loan['id']);
+        unset($loan['submit']);
+        
+        if(Loan::where('id', $id)->update($loan)){
+        return redirect('/lender')->with('success', 'Loan Updated Successfully');
+        }else{
+            return back()->with('error', 'Error updating loan');  
+        }
     }
 
     public function validation($form, $type)
