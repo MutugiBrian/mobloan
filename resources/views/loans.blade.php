@@ -121,7 +121,7 @@ button.close {
     <div class="grid mt-0 pt-0">
         <div class="grid-sizer"></div>
 
-        @if(count($loan_types) > 1)
+        @if(count($loan_types) > 0)
         @foreach($loan_types as $loan_type)
         <div class="grid-item">
             <div class="card card-image img-fluid z-depth-1 rounded text-center " height="800px !important;"

@@ -49,7 +49,7 @@
                                 <span>Loan Type</span>
                                 <select class="mdb-select my-1" name="loan_type">
                                     <option value="" disabled>Choose option</option>
-                                    @if(count($loan_types) > 1)
+                                    @if(count($loan_types) 0)
                                     @foreach($loan_types as $loan_type)
                                     <option value="{{$loan_type->id}}" @if($loan_type->id == $loan->loan_type)
                                         selected
