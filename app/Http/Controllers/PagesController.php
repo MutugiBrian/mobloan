@@ -159,6 +159,13 @@ class PagesController extends Controller
             // Authentication passed...
             $usertype = Auth::user()->role;
             $verified = Auth::user()->verified;
+            $suspended = Auth::user()->deleted;
+             
+            if($suspended){
+                Auth::logout();
+                Session::flush();
+                return back()->with('error', 'Sorry , this account has been suspended');
+            }else{
 
             if($verified != 1){
 
@@ -191,12 +198,14 @@ class PagesController extends Controller
 
             }
 
-            
+         }  
         }else{
             return back()->with('error', 'Wrong username or password.');
         }
         
+
     }
+    
 
     public function loans(){
         $loan_types = LoanType::where('deleted',FALSE)->get();

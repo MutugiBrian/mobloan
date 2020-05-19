@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+
+Route::post('login', [ 'as' => 'login', 'uses' => 'PagesController@login']);
+
+Route::get('loans','ApisController@allloans');
+Route::get('liveloans/{id}','ApisController@liveloans');
+Route::get('lenders','ApisController@lenders');
+Route::get('lenderloans/{id}','ApisController@lenderloans');

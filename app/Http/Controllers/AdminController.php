@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\SiteSetting;
 use App\LoanType;
-
+use App\Loan;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -47,6 +48,7 @@ class AdminController extends Controller
         $data = array(
             'navbar'=>'admin',
             'pagename'=>'manageloans',
+            'loans'=>Loan::get()
            );
         return view('admin.manageloans')->with($data);
     }
@@ -131,7 +133,29 @@ class AdminController extends Controller
         if(LoanType::where('id', $id)->update([
             'deleted'=>TRUE
         ])){
-            return back()->with('success', 'Industry Deleted');
+            return back()->with('success', 'Loan Type Deleted');
+        }else{
+            return back()->with('error', 'Error Deleting');  
+        }
+    }
+
+    public function deleteloan($id){
+
+        if(Loan::where('id', $id)->update([
+            'deleted'=>TRUE
+        ])){
+            return back()->with('success', 'Loan Deleted');
+        }else{
+            return back()->with('error', 'Error Deleting');  
+        }
+    }
+
+    public function deletelender($id){
+
+        if(User::where('id', $id)->update([
+            'deleted'=>TRUE
+        ])){
+            return back()->with('success', 'Lender Deleted');
         }else{
             return back()->with('error', 'Error Deleting');  
         }
