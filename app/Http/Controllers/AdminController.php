@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\SiteSetting;
 use App\LoanType;
-
+use App\Loan;
 
 class AdminController extends Controller
 {
@@ -47,6 +47,7 @@ class AdminController extends Controller
         $data = array(
             'navbar'=>'admin',
             'pagename'=>'manageloans',
+            'loans'=>Loan::get()
            );
         return view('admin.manageloans')->with($data);
     }

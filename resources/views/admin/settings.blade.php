@@ -202,84 +202,90 @@
         <!-- Grid row -->
 
         @if(count($loan_types) > 0)
-        @foreach($loan_types as $type)
+        <div class="card">
+            <!--Card content-->
+            <div class="card-body px-lg-5 pt-0">
+                @foreach($loan_types as $type)
 
 
-        <form class="text-center mx-3 px-3 needs-validation" style="color: #757575;" action="/updateloantype"
-            method="POST" enctype="multipart/form-data" novalidate>
+                <form class="text-center mx-3 px-3 needs-validation" style="color: #757575;" action="/updateloantype"
+                    method="POST" enctype="multipart/form-data" novalidate>
 
-            <div class="row">
+                    <div class="row">
 
-                <div class="col-sm-10">
+                        <div class="col-sm-10">
 
 
-                    <div class="row justify-content-center">
+                            <div class="row justify-content-center">
 
-                        <div class="col">
-                            <small id="passwordHelpBlock" class="form-text text-left col sizeb">
-                                <label for="validationCustom04">Name</label>
-                            </small>
-                            <input type="text" class="form-control nb" name="name" placeholder=""
-                                value="{{$type->name}}" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid name.
+                                <div class="col">
+                                    <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+                                        <label for="validationCustom04">Name</label>
+                                    </small>
+                                    <input type="text" class="form-control nb" name="name" placeholder=""
+                                        value="{{$type->name}}" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid name.
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+                                        <label for="validationCustom04">Description</label>
+                                    </small>
+                                    <input type="text" name="description" class="form-control nb"
+                                        id="validationCustom04" placeholder="" value="{{$type->description}}" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a description
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="my-2">
+                                        <small id="passwordHelpBlock" class="form-text text-left col sizeb">
+                                            <label for="validationCustom04">Cover Image - {{$type->image}}</label>
+                                        </small>
+                                        <input type="file" name="imageurl" id=" validationCustom04"
+                                            accept="image/x-png,image/jpeg" placeholder="">
+                                    </div>
+                                </div>
+
                             </div>
+
+                            @csrf
+                            <input type="hidden" name="id" value="{{$type->id}}" required>
+
+
+
                         </div>
-                        <div class="col">
-                            <small id="passwordHelpBlock" class="form-text text-left col sizeb">
-                                <label for="validationCustom04">Description</label>
-                            </small>
-                            <input type="text" name="description" class="form-control nb" id="validationCustom04"
-                                placeholder="" value="{{$type->description}}" required>
-                            <div class="invalid-feedback">
-                                Please provide a description
+                        <div class="col-sm-2 mt-sm-4 " style="padding-top:10px;">
+
+                            <div class="row py-0">
+                                <button type="submit" class="col transparentbutton" style="border: none !important;">
+                                    <i class="far fa-save text-primary"></i>
+                                </button>
+
+                                <a href="#" onclick="deletetype({{$type->id}})" class="col transparentbutton">
+                                    <i class="far fa-trash-alt text-danger"></i>
+                                </a>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="my-2">
-                                <small id="passwordHelpBlock" class="form-text text-left col sizeb">
-                                    <label for="validationCustom04">Cover Image - {{$type->image}}</label>
-                                </small>
-                                <input type="file" name="imageurl" id=" validationCustom04"
-                                    accept="image/x-png,image/jpeg" placeholder="">
-                            </div>
+
                         </div>
 
                     </div>
-
-                    @csrf
-                    <input type="hidden" name="id" value="{{$type->id}}" required>
+                </form>
 
 
 
-                </div>
-                <div class="col-sm-2 mt-sm-4 " style="padding-top:10px;">
 
-                    <div class="row py-0">
-                        <button type="submit" class="col transparentbutton" style="border: none !important;">
-                            <i class="far fa-save text-primary"></i>
-                        </button>
 
-                        <a href="#" onclick="deletetype({{$type->id}})" class="col transparentbutton">
-                            <i class="far fa-trash-alt text-danger"></i>
-                        </a>
-                    </div>
 
-                </div>
-
+                @endforeach
             </div>
-        </form>
-
-
-
-
-
-
-        @endforeach
+        </div>
         @else
         <div class="my-2 z-depth-1">
             <section class="text-center dark-grey-text">
-                <p class="text-muted"><i class="fas fa-exclamation-triangle mr-1 text-danger my-2"></i> No Loantypes
+                <p class="text-muted"><i class="fas fa-exclamation-triangle mr-1 text-danger my-2"></i> No
+                    Loantypes
                     created
                 </p>
             </section>
