@@ -15,6 +15,36 @@ use Mail;
 class PagesController extends Controller
 {
     //
+    public function index(){
+        $auth = Auth::user();
+
+        if(Auth::user()){
+
+        if(Auth::user()->role== 'admin' ){
+
+           return redirect('/admin');
+
+        }
+        elseif(Auth::user()->role == 'lender' ){
+
+           return redirect('/lender');
+
+        }
+        elseif(Auth::user()->user_type == 'Company' ){
+
+           return redirect('/company');
+
+        }else{
+
+            return view('landing');
+        
+        }
+
+    }else{
+        return view('landing');
+    }
+    }
+    
     public function storeimage($file){
 
         if($file == null){
@@ -180,6 +210,12 @@ class PagesController extends Controller
             'pagename'=>'car loan',
            );
         return view('compare')->with($data);
+    }
+
+    public function logout(){
+        Auth::logout();
+        Session::flush();
+        return redirect('/');
     }
 
     public function validation($form, $type)

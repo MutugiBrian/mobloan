@@ -14,9 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landing');
-});
+Route::get('/', 'PagesController@index');
+Route::get('/logout', 'PagesController@logout');
 
 
 Route::post('/register', 'PagesController@postregister');
@@ -39,6 +38,8 @@ Route::get('/admin', 'AdminController@home');
 Route::get('/manageloans', 'AdminController@manageloans');
 Route::get('/settings', 'AdminController@settings');
 
+
+Route::post('/createloan', 'LenderController@postloan');
 
 Route::get('/lender', 'LenderController@home');
 Route::get('/createloan', 'LenderController@createloan');

@@ -57,7 +57,9 @@
                             <a href="/register" type="button" class="btn btn-outline-grey btn-rounded btn-md"><i
                                     class="fas fa-briefcase mr-1"></i> OFFER
                                 LOANS</a>
-                            <a href="/login" type="button" class="btn btn-outline-grey btn-rounded btn-md z-depth-0"><i
+                            <a href="/login" type="button"
+                                class="btn btn-outline-grey btn-rounded btn-md z-depth-0 border border-0"
+                                style="border:none !important;font-size:15px !important;"><i
                                     class="fas fa-key mr-1"></i> LOGIN</a>
                         </div>
                         <!--Grid column-->

@@ -107,6 +107,45 @@
                     ">
                         <a class="nav-link" href="/settings">Settings</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout"><i class="fas fa-power-off mr-1"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        @elseif(isset($navbar) && $navbar == 'lender')
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bga blue-gradient z-depth-0">
+            <a class="navbar-brand" href="/"><strong>{{$site->sitename ?? config('app.name')}}</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-sm-right" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item 
+                    @if($pagename == 'my loans')
+                        active
+                    @endif
+                    ">
+                        <a class="nav-link" href="/">Loans<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item 
+                    @if($pagename == 'create loan')
+                        active
+                    @endif
+                    ">
+                        <a class="nav-link" href="/createloan">Create Loan</a>
+                    </li>
+                    <li class="nav-item 
+                    @if($pagename == 'profile')
+                        active
+                    @endif
+                    ">
+                        <a class="nav-link" href="/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout"><i class="fas fa-power-off mr-1"></i> Logout</a>
+                    </li>
                 </ul>
             </div>
         </nav>
