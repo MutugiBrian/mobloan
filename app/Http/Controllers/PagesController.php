@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\SiteSetting;
+use App\Loan;
+use App\LoanType;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -15,6 +17,36 @@ use Mail;
 class PagesController extends Controller
 {
     //
+    public function index(){
+        $auth = Auth::user();
+
+        if(Auth::user()){
+
+        if(Auth::user()->role== 'admin' ){
+
+           return redirect('/admin');
+
+        }
+        elseif(Auth::user()->role == 'lender' ){
+
+           return redirect('/lender');
+
+        }
+        elseif(Auth::user()->user_type == 'Company' ){
+
+           return redirect('/company');
+
+        }else{
+
+            return view('landing');
+        
+        }
+
+    }else{
+        return view('landing');
+    }
+    }
+    
     public function storeimage($file){
 
         if($file == null){
@@ -167,19 +199,35 @@ class PagesController extends Controller
     }
 
     public function loans(){
+        $loan_types = LoanType::where('deleted',FALSE)->get();
+        foreach ($loan_types as $loan_type) {
+            $loan_type->loans = Loan::where('loan_type',$loan_type->id)->count();
+        }
         $data = array(
             'navbar'=>'transparent',
             'pagename'=>'loans',
+            'loan_types'=>$loan_types
            );
         return view('loans')->with($data);
     }
 
-    public function compare(){
+    public function compare($id){
+        $loans = Loan::where('loan_type',$id)->where('deleted',FALSE)->get();
+        foreach ($loans as $loan) {
+            $loan->lender_logo = User::where('id',$loan->lender)->value('logo');
+        }
         $data = array(
             'navbar'=>'transparent',
             'pagename'=>'car loan',
+            'loans'=>$loans
            );
         return view('compare')->with($data);
+    }
+
+    public function logout(){
+        Auth::logout();
+        Session::flush();
+        return redirect('/');
     }
 
     public function validation($form, $type)

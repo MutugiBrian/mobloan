@@ -117,152 +117,38 @@ button.close {
 
 
 @section('body')
-<div class="container-fluid cloudy-knoxville-gradient mt-0 pt-0">
+<div class="container-fluid cloudy-knoxville-gradient mt-0 pt-0" style="min-height:80vh;">
     <div class="grid mt-0 pt-0">
         <div class="grid-sizer"></div>
-        <div class="grid-item">
-            <div class="card card-image img-fluid z-depth-1 rounded text-center " height="800px !important;"
-                style="background-image: url(https://wallpaperaccess.com/full/33110.jpg);">
-                <!-- Content -->
-                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-                    <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-university"></i> 5</h5>
-                        <h3 class="card-title pt-2"><strong>Car Loan</strong></h3>
-                        <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0 "><i
-                                class="fas fa-clone left"></i> Compare</a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
+        @if(count($loan_types) > 1)
+        @foreach($loan_types as $loan_type)
         <div class="grid-item">
             <div class="card card-image img-fluid z-depth-1 rounded text-center " height="800px !important;"
-                style="background-image: url(https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);">
+                style="background-image: url(/storage/images/{{$loan_type->image}});">
                 <!-- Content -->
                 <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                     <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-university"></i> 3</h5>
-                        <h3 class="card-title pt-2"><strong>Mortgage Loan</strong></h3>
+                        <h5 class="colora"><i class="fas fa-university"></i> {{$loan_type->loans}}</h5>
+                        <h3 class="card-title pt-2"><strong>{{$loan_type->name}}</strong></h3>
                         <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
-                                class="fas fa-clone left"></i> Compare</a>
+                        <a href="/compare/{{$loan_type->id}}" type="button"
+                            class="btn btn-primary btn-rounded btn-md ml-md-0 "><i class="fas fa-clone left"></i>
+                            Compare</a>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="grid-item">
-            <div class="card card-image img-fluid z-depth-1 rounded text-center " height="800px !important;"
-                style="background-image: url(https://ak.picdn.net/shutterstock/videos/19504456/thumb/1.jpg);">
-                <!-- Content -->
-                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-                    <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-university"></i> 2</h5>
-                        <h3 class="card-title pt-2"><strong>Salary Loan</strong></h3>
-                        <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
-                                class="fas fa-clone left"></i> Compare</a>
-                    </div>
-                </div>
-            </div>
+        @endforeach
+        @else
+        <div class="my-2 z-depth-1">
+            <section class="text-center dark-grey-text">
+                <p class="text-muted"><i class="fas fa-exclamation-triangle mr-1 text-danger my-2"></i> No Loantypes
+                    created
+                </p>
+            </section>
         </div>
-
-        <div class="grid-item">
-            <div class="card card-image img-fluid z-depth-1 rounded text-center " height="800px !important;"
-                style="background-image: url(https://www.itl.cat/pngfile/big/80-802915_home-party-plans-unique-21st-birthday-party-planner.jpg);">
-                <!-- Content -->
-                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-                    <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-university"></i> 12</h5>
-                        <h3 class="card-title pt-2"><strong>Weekend Loan</strong></h3>
-                        <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
-                                class="fas fa-clone left"></i> Compare</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid-item">
-            <div class="card card-image img-fluid z-depth-1 rounded text-center " height="800px !important;"
-                style="background-image: url(https://www.bbva.com/wp-content/uploads/en/2015/12/bbva-banca-tarjetas-1920x1080.jpg);">
-                <!-- Content -->
-                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-                    <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-university"></i> 37</h5>
-                        <h3 class="card-title pt-2"><strong>Credit Card</strong></h3>
-                        <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
-                                class="fas fa-clone left"></i> Compare</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid-item">
-            <div class="card card-image img-fluid z-depth-1 rounded text-center " height="800px !important;"
-                style="background-image: url(https://ak5.picdn.net/shutterstock/videos/3182995/thumb/1.jpg?ip=x480);">
-                <!-- Content -->
-                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-                    <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-university"></i> 64</h5>
-                        <h3 class="card-title pt-2"><strong>Log Book Loan</strong></h3>
-                        <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
-                                class="fas fa-clone left"></i> Compare</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid-item">
-            <div class="card card-image img-fluid z-depth-1 rounded text-center " height="800px !important;"
-                style="background-image: url(https://moranridge.co.ke/images/ban4.fw.png);">
-                <!-- Content -->
-                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-                    <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-university"></i> 251</h5>
-                        <h3 class="card-title pt-2"><strong>Title deed Loan</strong></h3>
-                        <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
-                                class="fas fa-clone left"></i> Compare</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid-item">
-            <div class="card card-image img-fluid z-depth-1 rounded text-center " height="800px !important;"
-                style="background-image: url(https://businessfirstfamily.com/wp-content/uploads/2016/09/import-export-business-key-players.jpg);">
-                <!-- Content -->
-                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-                    <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-university"></i> 8</h5>
-                        <h3 class="card-title pt-2"><strong>Import Finance</strong></h3>
-                        <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
-                                class="fas fa-clone left"></i> Compare</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid-item">
-            <div class="card card-image img-fluid z-depth-1 rounded text-center " height="800px !important;"
-                style="background-image: url(https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);">
-                <!-- Content -->
-                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-                    <div class="text-white text-center" style="width:100%;">
-                        <h5 class="colora"><i class="fas fa-university"></i> 17</h5>
-                        <h3 class="card-title pt-2"><strong>Chamaa Loan</strong></h3>
-                        <p></p>
-                        <a href="/compare" type="button" class="btn btn-primary btn-rounded btn-md ml-md-0"><i
-                                class="fas fa-clone left"></i> Compare</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endif
 
     </div>
 
